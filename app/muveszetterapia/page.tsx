@@ -163,7 +163,7 @@ export default function ArtTherapyPage() {
           <div className="flex flex-col items-center">
             <div className="relative w-full h-64 mb-2">
               <Image
-                src="/placeholder.svg?height=300&width=400"
+                src="https://pub-467a699223cd4cc99c2ddee563145e7c.r2.dev/preparalt-vers.jpg"
                 alt="Preparált vers"
                 fill
                 className="object-cover rounded-lg"
@@ -177,7 +177,7 @@ export default function ArtTherapyPage() {
           <div className="flex flex-col items-center">
             <div className="relative w-full h-64 mb-2">
               <Image
-                src="/placeholder.svg?height=300&width=400"
+                src="https://pub-467a699223cd4cc99c2ddee563145e7c.r2.dev/Preparalt-vers-2.jpg"
                 alt="Preparált vers 2"
                 fill
                 className="object-cover rounded-lg"
