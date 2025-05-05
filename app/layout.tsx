@@ -10,7 +10,10 @@ const inter = Inter({ subsets: ["latin", "latin-ext"] })
 
 export const metadata: Metadata = {
   title: "HAW - Horváth Ágnes",
-  description: "Business coach, management tréner, szocio- és művészetterapeuta"
+  description: "Business coach, management tréner, szocio- és művészetterapeuta",
+  icons: {
+    icon: './favicon.png',
+  },
 }
 
 export default function RootLayout({
