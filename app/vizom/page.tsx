@@ -18,7 +18,7 @@ export default function VisionPage() {
 
         <div className="flex justify-center mb-6">
           <div className="relative w-full max-w-2xl h-64">
-            <Image src="/placeholder.svg?height=320&width=640" alt="Szikla" fill className="object-cover rounded-lg" />
+            <Image src="https://pub-467a699223cd4cc99c2ddee563145e7c.r2.dev/szikla.png" alt="Szikla" fill className="object-cover rounded-lg" />
           </div>
         </div>
       </div>
