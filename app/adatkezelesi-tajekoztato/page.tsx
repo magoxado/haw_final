@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
 
         <div className="flex justify-center">
           <Button asChild className="gap-2">
-            <a href="#" target="_blank" rel="noreferrer noopener">
+            <a href="https://pub-467a699223cd4cc99c2ddee563145e7c.r2.dev/Adatkezelesi-tajekoztato_haw.pdf" target="_blank" rel="noreferrer noopener">
               <FileDown className="h-4 w-4" />
               Letöltés
             </a>
