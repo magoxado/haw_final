@@ -11,7 +11,7 @@ export default function JobSearchPage() {
         <div className="flex justify-center">
           <div className="relative w-full max-w-md h-64">
             <Image
-              src="/placeholder.svg?height=300&width=400"
+              src="https://cdn.haw.hu/bennem-lako-no-scaled.jpg"
               alt="Önéletrajz"
               fill
               className="object-cover rounded-lg"
@@ -21,7 +21,7 @@ export default function JobSearchPage() {
 
         <div className="flex justify-center">
           <div className="relative w-full max-w-md h-64">
-            <Image src="/placeholder.svg?height=300&width=400" alt="Interjú" fill className="object-cover rounded-lg" />
+            <Image src="https://cdn.haw.hu/IMG_20220130_145104-scaled.jpg" alt="Interjú" fill className="object-cover rounded-lg" />
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@ export default function JobSearchPage() {
         <div className="flex justify-center mb-8">
           <div className="relative w-full max-w-2xl h-80">
             <Image
-              src="/placeholder.svg?height=400&width=600"
+              src="https://cdn.haw.hu/IMG_20211231_145959-scaled.jpg"
               alt="Szakmai bemutató"
               fill
               className="object-cover rounded-lg"
