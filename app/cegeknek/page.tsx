@@ -46,7 +46,7 @@ export default function CompaniesPage() {
           <div className="flex justify-center">
             <div className="relative w-full max-w-md h-80">
               <Image
-                src="/placeholder.svg?height=400&width=300"
+                src="https://cdn.haw.hu/logo.png"
                 alt="Céges tanácsadás"
                 fill
                 className="object-cover rounded-lg"

@@ -10,7 +10,7 @@ export default function ArtTherapyPage() {
       <div className="flex justify-center mb-8">
         <div className="relative w-64 h-80">
           <Image
-            src="/placeholder.svg?height=300&width=200"
+            src="https://cdn.haw.hu/HAW_Muveszetterapia-scaled.jpg"
             alt="Művészetterápia"
             fill
             className="object-cover rounded-lg"

@@ -31,7 +31,7 @@ export default function Home() {
           <div className="flex justify-center">
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary">
               <Image
-                src="https://pub-467a699223cd4cc99c2ddee563145e7c.r2.dev/selfie.jpg"
+                src="https://cdn.haw.hu/selfie.jpg"
                 alt="Horváth Ágnes"
                 fill
                 className="object-cover"
