@@ -55,14 +55,6 @@ export default function JobSearchPage() {
           <Link href="/kapcsolat">Kapcsolatfelvétel</Link>
         </Button>
       </div>
-
-      <div className="text-sm text-muted-foreground text-center">
-        A Beküldés gomb lenyomásával elismeri, hogy megismerte és elfogadta az{" "}
-        <Link href="/adatkezelesi-tajekoztato" className="text-primary hover:underline">
-          Adatvédelmi Tájékoztatóban
-        </Link>{" "}
-        foglaltakat.
-      </div>
     </div>
   )
 }
