@@ -58,12 +58,6 @@ export default function ContactPage() {
           </CardContent>
         </Card>
       </div>
-
-      <div className="text-center">
-        <Link href="/adatkezelesi-tajekoztato" className="text-primary hover:underline">
-          Adatkezelési tájékoztató
-        </Link>
-      </div>
     </div>
   )
 }
