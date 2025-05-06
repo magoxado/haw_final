@@ -3,7 +3,8 @@ import Link from "next/link"
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="container mx-auto px-4 py-12">Csoportok</h1>
+    <div className="container mx-auto px-4 py-12">
+      <h1>Csoportok</h1>
 
       <div className="max-w-3xl mx-auto bg-muted p-8 rounded-lg mb-8">
         <p className="text-lg mb-6">
@@ -17,5 +18,6 @@ export default function PrivacyPolicyPage() {
           <Link href="/">Vissza a főoldalra</Link>
         </Button>
       </div>
+    </div>
   )
 }
