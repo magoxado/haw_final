@@ -155,40 +155,6 @@ export default function ArtTherapyPage() {
           </Button>
         </div>
       </div>
-
-      <div>
-        <h2 className="text-2xl font-semibold mb-4">Ízelítő a terápiákon készült munkákból:</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="flex flex-col items-center">
-            <div className="relative w-full h-64 mb-2">
-              <Image
-                src="https://pub-467a699223cd4cc99c2ddee563145e7c.r2.dev/preparalt-vers.jpg"
-                alt="Preparált vers"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-            <figcaption className="text-sm text-muted-foreground">
-              <strong>Preparált vers</strong>
-            </figcaption>
-          </div>
-
-          <div className="flex flex-col items-center">
-            <div className="relative w-full h-64 mb-2">
-              <Image
-                src="https://pub-467a699223cd4cc99c2ddee563145e7c.r2.dev/Preparalt-vers-2.jpg"
-                alt="Preparált vers 2"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-            <figcaption className="text-sm text-muted-foreground">
-              <strong>Preparált vers 2</strong>
-            </figcaption>
-          </div>
-        </div>
-      </div>
     </div>
   )
 }
