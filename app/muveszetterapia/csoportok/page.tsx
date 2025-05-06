@@ -1,16 +1,22 @@
-import React from "react";
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
-export default function CsoportokPage() {
-    return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200">
-            <div className="bg-white rounded-xl shadow-lg p-8 max-w-md w-full text-center">
-                <h1 className="text-3xl font-bold text-purple-700 mb-4">Csoportok</h1>
-                <p className="text-lg text-gray-700 mb-6">
-                    A csoportok szervezés alatt vannak.<br />
-                    Kérjük, nézz vissza később!
-                </p>
-                <span className="inline-block animate-bounce text-4xl text-purple-400">⏳</span>
-            </div>
-        </div>
-    );
+export default function PrivacyPolicyPage() {
+  return (
+    <div className="container mx-auto px-4 py-12">Csoportok</h1>
+
+      <div className="max-w-3xl mx-auto bg-muted p-8 rounded-lg mb-8">
+        <p className="text-lg mb-6">
+        A csoportok szervezés alatt vannak.
+        Kérjük, nézz vissza később!
+        </p>
+      </div>
+
+      <div className="text-center">
+        <Button asChild variant="outline">
+          <Link href="/">Vissza a főoldalra</Link>
+        </Button>
+      </div>
+    </div>
+  )
 }
