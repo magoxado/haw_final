@@ -1,5 +1,5 @@
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function PrivacyPolicyPage() {
   return (
@@ -17,6 +17,5 @@ export default function PrivacyPolicyPage() {
           <Link href="/">Vissza a főoldalra</Link>
         </Button>
       </div>
-    </div>
   )
 }
