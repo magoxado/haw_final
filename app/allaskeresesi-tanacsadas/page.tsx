@@ -7,37 +7,7 @@ export default function JobSearchPage() {
     <div className="container mx-auto px-4 py-12">
       <h1 className="text-4xl font-bold mb-8 text-center">Álláskeresési- és karrier-tanácsadás</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <div className="flex justify-center">
-          <div className="relative w-full max-w-md h-64">
-            <Image
-              src="https://cdn.haw.hu/bennem-lako-no-scaled.jpg"
-              alt="Önéletrajz"
-              fill
-              className="object-cover rounded-lg"
-            />
-          </div>
-        </div>
-
-        <div className="flex justify-center">
-          <div className="relative w-full max-w-md h-64">
-            <Image src="https://cdn.haw.hu/IMG_20220130_145104-scaled.jpg" alt="Interjú" fill className="object-cover rounded-lg" />
-          </div>
-        </div>
-      </div>
-
-      <div className="mb-12">
-        <div className="flex justify-center mb-8">
-          <div className="relative w-full max-w-2xl h-80">
-            <Image
-              src="https://cdn.haw.hu/IMG_20211231_145959-scaled.jpg"
-              alt="Szakmai bemutató"
-              fill
-              className="object-cover rounded-lg"
-            />
-          </div>
-        </div>
-      </div>
+      
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
         <div>
