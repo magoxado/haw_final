@@ -32,7 +32,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
-        <Analytics mode="production" />
+        <Analytics />
       </body>
     </html>
   )
