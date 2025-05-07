@@ -59,6 +59,7 @@
     "vaul": "^0.9.6",
     "zod": "latest",
     "@radix-ui/react-icons": "latest",
+    "@vercel/analytics": "latest",
     "resend": "latest"
   },
   "devDependencies": {

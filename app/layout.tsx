@@ -1,11 +1,11 @@
 import type React from "react"
+import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin", "latin-ext"] })
 
@@ -32,7 +32,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
-        <Analytics />
+        <Analytics mode="production" />
       </body>
     </html>
   )
