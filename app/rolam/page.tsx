@@ -29,7 +29,13 @@ export default function AboutPage() {
 
         <div className="flex justify-center">
           <div className="relative w-64 h-80 rounded-lg overflow-hidden">
-            <Image src="https://cdn.haw.hu/selfie.jpg" alt="Horváth Ágnes" fill className="object-cover" />
+                          <Image
+                            src="images/selfie.jpg"
+                            alt="Horváth Ágnes"
+                            fill
+                            className="object-cover"
+                            priority
+                          />
           </div>
         </div>
       </div>
