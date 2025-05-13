@@ -34,7 +34,7 @@ export default function WhoCanIHelpPage() {
         <div className="flex justify-center">
           <div className="relative w-full max-w-md h-80">
             <Image
-              src="https://cdn.haw.hu/Celtudatos-1.jpg"
+              src="/../public/c_1.jpg"
               alt="Céltudatos"
               fill
               className="object-cover rounded-lg"

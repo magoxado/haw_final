@@ -18,7 +18,7 @@ export default function VisionPage() {
 
         <div className="flex justify-center mb-6">
           <div className="relative w-full max-w-2xl h-64">
-            <Image src="https://cdn.haw.hu/szikla.png" alt="Szikla" fill className="object-cover rounded-lg" />
+            <Image src="/../public/hill.png" alt="Szikla" fill className="object-cover rounded-lg" />
           </div>
         </div>
       </div>
