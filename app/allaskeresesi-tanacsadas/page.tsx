@@ -50,7 +50,7 @@ export default function JobSearchPage() {
       </div>
 
       <div className="mb-12 text-center">
-        <h3 className="text-xl font-bold mb-6">Tanácsadás díja: 12.000 Ft/alkalom - 60 perc</h3>
+        <h3 className="text-xl font-bold mb-6">Tanácsadás díja: 16.000 Ft/alkalom - 50 perc</h3>
         <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
           <Link href="/kapcsolat">Kapcsolatfelvétel</Link>
         </Button>
