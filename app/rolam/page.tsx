@@ -7,7 +7,8 @@ export default function AboutPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
         <div>
-          <h2 className="text-2xl font-semibold mb-4">Horváth Ágnes - Fejlesztő, tanácsadó. (Megújítás mestere)</h2>
+          <h2 className="text-2xl font-semibold mb-4">Horváth Ágnes - Fejlesztő, tanácsadó.
+             (Megújítás mestere)</h2>
           <h3 className="text-xl font-medium mb-6">Business coach, management tréner, szocio- és művészetterapeuta</h3>
 
           <p className="mb-4">
