@@ -60,6 +60,7 @@
     "zod": "latest",
     "@radix-ui/react-icons": "latest",
     "@vercel/analytics": "latest",
+    "@vercel/speed-insights": "latest",
     "resend": "latest"
   },
   "devDependencies": {
