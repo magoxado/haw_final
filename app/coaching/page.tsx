@@ -9,7 +9,7 @@ export default function CoachingPage() {
 
       <div className="bg-[#f8f4e4] p-8 rounded-lg mb-12">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold mb-4">Üdvözöllek! Coachként segítek neked átlépni az akadályokat és megtalálni a számodra ideális utat a szakmai életedben.</h2>
+          <h2 className="text-3xl font-bold mb-4">Coachként segítek neked átlépni az akadályokat és megtalálni a számodra ideális utat a szakmai életedben.</h2>
           <p className="text-lg">
             Az elfogadás és ítéletmentesség mellett a kedvességet is alapvető karizmatikus jegyemnek tartom, amely meghatározza a kapcsolatomat ügyfeleimmel.
             Hiszem, hogy a kedvesség ereje segíti a bizalom és a nyitottság kialakítását és hozzájárul ahhoz, hogy ügyfeleim önmagukat adhassák.
