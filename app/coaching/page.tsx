@@ -62,7 +62,7 @@ export default function CoachingPage() {
           <div className="flex justify-center">
             <div className="relative w-full max-w-md h-80">
               <Image
-                src="/images/your-coaching-image.jpg" // **IMPORTANT: Replace with your actual image path**
+                src="https://cdn.haw.hu/onarckep.jpg" // **IMPORTANT: Replace with your actual image path**
                 alt="Coaching támogatás"
                 fill
                 className="object-cover rounded-lg"
