@@ -14,6 +14,7 @@ const navItems = [
   { name: "Vízióm", href: "/vizom" },
   { name: "Kinek tudok segíteni?", href: "/kinek-tudok-segiteni" },
   { name: "Cégeknek", href: "/cegeknek" },
+  { name: "Coaching", href: "/coaching" },
   { name: "Művészetterápia", href: "/muveszetterapia" },
   { name: "Álláskeresési tanácsadás", href: "/allaskeresesi-tanacsadas" },
   { name: "Kapcsolat", href: "/kapcsolat" },
