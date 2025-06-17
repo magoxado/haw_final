@@ -7,9 +7,9 @@ export default function PrivacyPolicyPage() {
 
       <div className="max-w-3xl mx-auto bg-muted p-8 rounded-lg mb-8">
         <p className="text-lg mb-6 flex items-center justify-center h-32 font-bold text-center">
-          neked barmikro hivd anyut
+          A csoportok szervezés alatt vannak.
           <br />
-          csok
+          Kérjük, nézz vissza később!
         </p>
       </div>
 
