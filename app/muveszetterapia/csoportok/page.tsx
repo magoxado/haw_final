@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
       <div className="text-center">
         <Button asChild variant="outline">
             <Link href="/" replace>
-              <a onClick={() => window.location.href = "/"}>Vissza a főoldalra</a>
+              Vissza a főoldalra
             </Link>
         </Button>
       </div>
