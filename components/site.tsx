@@ -1,3 +1,4 @@
+import type { ReactNode } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -21,7 +22,7 @@ export function PageHeader({
   )
 }
 
-export function SectionTitle({ children }: { children: React.ReactNode }) {
+export function SectionTitle({ children }: { children: ReactNode }) {
   return <h2 className="mb-6 text-3xl font-medium md:text-4xl">{children}</h2>
 }
 
@@ -61,8 +62,8 @@ export function Photo({
   caption?: string
 }) {
   return (
-    <figure className={cn("relative", className)}>
-      <div className="relative h-full min-h-72 overflow-hidden rounded-[1.75rem] bg-secondary shadow-xl">
+    <figure>
+      <div className={cn("relative min-h-72 overflow-hidden rounded-[1.75rem] bg-secondary shadow-xl", className)}>
         <Image src={src} alt={alt} fill className="object-cover" priority={priority} sizes="(min-width: 768px) 480px, 100vw" />
       </div>
       {caption ? <figcaption className="mt-3 text-center text-sm text-muted-foreground">{caption}</figcaption> : null}

@@ -1,60 +1,53 @@
-import Image from "next/image"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { PageHeader, Photo } from "@/components/site"
+
+const people = [
+  "Növekedési pályán, változás előtt álló cégeknek, vállalkozásoknak, vállalatoknak.",
+  "Cégvezetőknek, akik fejlődni, fejleszteni szeretnének.",
+  "Csapatoknak, akiknél probléma van és belülről nem látnak rá a kiváltó okokra.",
+  "Tulajdonosoknak, akik növelni szeretnék a céget, de nem találják a kollégákhoz vezető utat.",
+  "Vezetőknek, akik csapatot, közösséget szeretnének építeni, munkaerőt akarnak megtartani.",
+]
 
 export default function WhoCanIHelpPage() {
   return (
     <div className="container mx-auto px-4 py-16 md:py-20">
-      <p className="eyebrow mb-3 text-center">Együttműködés</p>
-      <h1 className="mb-12 text-center text-4xl font-medium md:text-6xl">Kinek tudok segíteni?</h1>
+      <PageHeader eyebrow="Együttműködés" title="Kinek tudok segíteni?" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
-        <div>
-          <ul className="space-y-4 text-lg">
-            <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <span>Növekedési pályán, változás előtt álló cégeknek, vállalkozásoknak, vállalatoknak.</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <span>Cégvezetőknek, akik fejlődni, fejleszteni szeretnének.</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <span>Csapatoknak, akiknél probléma van és belülről nem látnak rá a kiváltó okokra.</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <span>Tulajdonosoknak, akik növelni szeretnék a céget, de nem találják a kollégákhoz vezető utat.</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <span>Vezetőknek, akik csapatot, közösséget szeretnének építeni, munkaerőt akarnak megtartani.</span>
-            </li>
-          </ul>
+      <div className="grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="space-y-3">
+          {people.map((item, index) => (
+            <article
+              key={item}
+              className="flex gap-4 rounded-[1.4rem] border bg-card px-5 py-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
+            >
+              <span className="font-display text-2xl text-primary">0{index + 1}</span>
+              <p className="text-lg leading-relaxed">{item}</p>
+            </article>
+          ))}
         </div>
-
-        <div className="flex justify-center">
-          <div className="relative w-full max-w-md h-80">
-            <Image
-              src="/images/celtudatos.jpg"
-              alt="Céltudatos"
-              fill
-              className="object-cover rounded-lg"
-            />
-          </div>
+        <div className="lg:sticky lg:top-24">
+          <Photo src="/images/celtudatos.jpg" alt="Céltudatos" className="aspect-[4/5] w-full" />
         </div>
       </div>
 
-      <div className="bg-muted p-6 rounded-lg mb-12">
-        <p className="text-lg mb-4">
+      <section className="mt-16 grid gap-6 rounded-[2rem] bg-secondary/80 p-6 md:grid-cols-2 md:p-10">
+        <p className="text-lg leading-relaxed">
           Véleményem szerint növekedni, hatékonyabb vállalati teljesítményt elérni, kizárólag vezetői, munkatársi közös
           munkával, letisztázott, hatékony folyamatokkal, tiszta, érhető kommunikációval lehet. A problémák, kellő
           odafigyeléssel, elemzéssel, nem gátló, hanem támogató folyamatokká alakíthatók át.
         </p>
-
-        <p className="text-lg">
+        <p className="text-lg leading-relaxed">
           Húsz éves tapasztalattal, éles szemmel, logikus gondolkodással, széles ismeretekkel támogatom a vállalatokat,
           hogy a jelenlegi helyzeten túllendülve, a fejlődés útjára lépjenek.
         </p>
+      </section>
+
+      <div className="mt-10 flex justify-center">
+        <Button asChild size="lg">
+          <Link href="/cegeknek">Részletek cégeknek</Link>
+        </Button>
       </div>
     </div>
   )

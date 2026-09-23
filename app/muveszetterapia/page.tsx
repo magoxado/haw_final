@@ -1,161 +1,141 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { CtaBand, PageHeader, Photo, SectionTitle } from "@/components/site"
+
+const benefits = [
+  "Segítségével a saját erőforrásokat aktivizálni tudjunk.",
+  "Segít abban, hogy az önmagunkról alkotott képen javítani tudjuk.",
+  "Amikor alkotunk, akkor öngyógyító folyamatok zajlanak és ezek hatásai meg is maradnak.",
+]
+
+const process = [
+  <>
+    A terápiás folyamat során szabadon alkothatsz, megnyilvánulhatsz, mozoghatsz, nem foglak sem befolyásolni, sem
+    irányítani. <strong>Önmagad lehetsz.</strong>
+  </>,
+  <>
+    Ítélkezés nélkül foglak visszatükrözni, ezáltal jobban <strong>el tudod magad fogadni</strong>, igyekszem, hogy
+    rávezesselek arra, hogy a különböző élményeidet, folyamataidat átértékeld és elfogadd olyannak, amilyenek.
+  </>,
+  <>
+    A folyamat során megélt tapasztalataid alapján fejlődni, növekedni fogsz. Tapasztalataidat nyitottan, szabadon fogod
+    látni és ezeket be is tudod az <strong>énkép</strong>edbe illeszteni.
+  </>,
+  <>
+    A terápia középppontjában nem a problémáid, lelki zavaraid állnak, hanem <strong>Te</strong>.
+  </>,
+  <>
+    A művészetterápia lehetővé teszi, hogy szimbólumokon és metaforákon keresztül kommunikálj ahelyett, hogy
+    verbalizálni próbálnád, amit érzel. A művészet abban is segíthet, hogy hozzáférjen az eltárolt emlékekhez, amelyek
+    esetleg nem csak beszéddel jönnek elő.
+  </>,
+  <>
+    Terápia során a feltétel nélküli <strong>elfogadás</strong>sal dolgozom, ami azt jelenti, úgy vagy jó, ahogy vagy.
+    Szabadon vállalhatod önmagad, bármit előhozhatsz Magadból, fájdalmas, szégyenletes, félelmetes dolgokat is.
+    Biztonságot nyújtok, Feléd fordulok.
+  </>,
+  <>
+    Amit még tőlem kapsz, az az aktív, értő <strong>figyelem</strong>.
+  </>,
+  <>
+    A terápián történteket és az elhangzottakat teljes <strong>diszkréció</strong> védi.
+  </>,
+]
+
+const refrain = "Valljuk be, erre nagy szükség van mostanában."
+
+const tools = [
+  { title: "Képzőművészet", text: "Festék, rajzolás, tépés, ragasztás." },
+  {
+    title: "Zene",
+    text: "Hozott vagy a csoport témájához kapcsolódóan választott. A zene lehet passzív, avagy zenehallgatás vagy aktív, ami közös zenélést jelent.",
+  },
+  {
+    title: "Mozgás",
+    text: 'Mozgásterápia során egy olyan folyamaton mehetsz keresztül, amely során a mozgás és a képzelet találkozásán keresztül felszabadul az éned kreatív ereje és képessé válsz a belső harmóniád újrateremtésére. Testünk mindenre emlékszik és lehetőségünk van arra, hogy ezeket az emlékeket "át tudjuk írni" kellemesre, harmónikusra, még akkor is ha az előtte traumatikus volt. Testünk és lelkünk egy egységet alkot. Rendelkezünk egy olyan "nyelvvel", amely a személyiségünkből, élettörtenetünkből származik. Mozgásterápia során ezt a nyelvet "használjuk", azaz a testünk nyelvét és ezáltal testünket a gyógyulás szolgálatába állítjuk.',
+  },
+  {
+    title: "Irodalom",
+    text: "„Mindannyian olvassuk magunkat és a világot avégett, hogy megragadhassuk, mik vagyunk és hol vagyunk. Azért olvasunk, hogy megértsünk valamit, vagy hogy elinduljunk a megértés útján.” /Manguel/",
+  },
+]
 
 export default function ArtTherapyPage() {
   return (
     <div className="container mx-auto px-4 py-16 md:py-20">
-      <p className="eyebrow mb-3 text-center">Terápia</p>
-      <h1 className="mb-12 text-center text-4xl font-medium md:text-6xl">Művészetterápia</h1>
+      <PageHeader
+        eyebrow="Terápia"
+        title="Művészetterápia"
+        lead="Miért művészetterápia? Van benne valami természetes, valami magától értetődő, mégis felszabadító és gondolkodásra késztető."
+      />
 
-      <div className="flex justify-center mb-8">
-        <div className="relative w-64 h-80">
-          <Image
-            src="/images/muveszet.jpg"
-            alt="Művészetterápia"
-            fill
-            className="object-cover rounded-lg"
-          />
-          <figcaption className="text-center mt-2 text-sm text-muted-foreground">
-            Szia! Örülök, hogy itt vagy!
-          </figcaption>
+      <Photo
+        src="/images/muveszet.jpg"
+        alt="Művészetterápia"
+        caption="Szia! Örülök, hogy itt vagy!"
+        className="mx-auto aspect-[4/5] w-full max-w-sm"
+        priority
+      />
+
+      <section className="mt-16">
+        <SectionTitle>Mire jó?</SectionTitle>
+        <div className="grid gap-5 md:grid-cols-3">
+          {benefits.map((item) => (
+            <article
+              key={item}
+              className="flex flex-col rounded-[1.6rem] border bg-card p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            >
+              <p className="flex-1 text-lg leading-relaxed">{item}</p>
+              <p className="mt-5 text-sm text-primary">{refrain}</p>
+            </article>
+          ))}
         </div>
-      </div>
+      </section>
 
-      <div className="mb-12">
-        <p className="text-lg mb-4">
-          Miért művészetterápia? Van benne valami természetes, valami magától értetődő, mégis felszabadító és
-          gondolkodásra késztető.
-        </p>
-
-        <h2 className="text-2xl font-semibold mb-4">Mire jó?</h2>
-
-        <p className="mb-3">
-          Segítségével a saját erőforrásokat aktivizálni tudjunk. -- Valljuk be, erre nagy szükség van mostanában.
-        </p>
-
-        <p className="mb-3">
-          Segít abban, hogy az önmagunkról alkotott képen javítani tudjuk. -- Valljuk be, erre nagy szükség van
-          mostanában.
-        </p>
-
-        <p className="mb-3">
-          Amikor alkotunk, akkor öngyógyító folyamatok zajlanak és ezek hatásai meg is maradnak. -- Valljuk be, erre
-          nagy szükség van mostanában.
-        </p>
-      </div>
-
-      <div className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Mit történik?</h2>
-
-        <p className="mb-3">
-          A terápiás folyamat során szabadon alkothatsz, megnyilvánulhatsz, mozoghatsz, nem foglak sem befolyásolni, sem
-          irányítani. <strong>Önmagad lehetsz.</strong> -- Valljuk be, erre nagy szükség van mostanában.
-        </p>
-
-        <p className="mb-3">
-          Ítélkezés nélkül foglak visszatükrözni, ezáltal jobban <strong>el tudod magad fogadni</strong>, igyekszem,
-          hogy rávezesselek arra, hogy a különböző élményeidet, folyamataidat átértékeld és elfogadd olyannak,
-          amilyenek. -- Valljuk be, erre nagy szükség van mostanában.
-        </p>
-
-        <p className="mb-3">
-          A folyamat során megélt tapasztalataid alapján fejlődni, növekedni fogsz. Tapasztalataidat nyitottan, szabadon
-          fogod látni és ezeket be is tudod az <strong>énkép</strong>edbe illeszteni. -- Valljuk be, erre nagy szükség
-          van mostanában.
-        </p>
-
-        <p className="mb-3">
-          A terápia középppontjában nem a problémáid, lelki zavaraid állnak, hanem <strong>Te</strong>. -- Valljuk be,
-          erre nagy szükség van mostanában.
-        </p>
-
-        <p className="mb-3">
-          A művészetterápia lehetővé teszi, hogy szimbólumokon és metaforákon keresztül kommunikálj ahelyett, hogy
-          verbalizálni próbálnád, amit érzel. A művészet abban is segíthet, hogy hozzáférjen az eltárolt emlékekhez,
-          amelyek esetleg nem csak beszéddel jönnek elő.
-        </p>
-
-        <p className="mb-3">
-          Terápia során a feltétel nélküli <strong>elfogadás</strong>sal dolgozom, ami azt jelenti, úgy vagy jó, ahogy
-          vagy. Szabadon vállalhatod önmagad, bármit előhozhatsz Magadból, fájdalmas, szégyenletes, félelmetes dolgokat
-          is. Biztonságot nyújtok, Feléd fordulok. -- Valljuk be, erre nagy szükség van mostanában.
-        </p>
-
-        <p className="mb-3">
-          Amit még tőlem kapsz, az az aktív, értő <strong>figyelem</strong>. -- Valljuk be, erre nagy szükség van
-          mostanában.
-        </p>
-
-        <p className="mb-3">
-          A terápián történteket és az elhangzottakat teljes <strong>diszkréció </strong>védi.
-        </p>
-      </div>
-
-      <div className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Milyen eszközöket használok?</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-          <div>
-            <h3 className="text-xl font-medium mb-2">
-              <strong>Képzőművészet:</strong>
-            </h3>
-            <p>Festék, rajzolás, tépés, ragasztás.</p>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-medium mb-2">
-              <strong>Zene:</strong>
-            </h3>
-            <p>
-              Hozott vagy a csoport témájához kapcsolódóan választott. A zene lehet passzív, avagy zenehallgatás vagy
-              aktív, ami közös zenélést jelent.
-            </p>
-          </div>
+      <section className="mt-16">
+        <SectionTitle>Mit történik?</SectionTitle>
+        <div className="space-y-4">
+          {process.map((item, index) => (
+            <article key={index} className="grid gap-4 rounded-[1.6rem] border bg-card p-6 md:grid-cols-[4rem_1fr]">
+              <span className="font-display text-3xl text-primary/40">0{index + 1}</span>
+              <div>
+                <p className="text-lg leading-relaxed">{item}</p>
+                {index !== 4 && index !== 7 ? <p className="mt-3 text-sm text-primary">{refrain}</p> : null}
+              </div>
+            </article>
+          ))}
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h3 className="text-xl font-medium mb-2">
-              <strong>Mozgás:</strong>
-            </h3>
-            <p>
-              Mozgásterápia során egy olyan folyamaton mehetsz keresztül, amely során a mozgás és a képzelet
-              találkozásán keresztül felszabadul az éned kreatív ereje és képessé válsz a belső harmóniád
-              újrateremtésére. Testünk mindenre emlékszik és lehetőségünk van arra, hogy ezeket az emlékeket "át tudjuk
-              írni" kellemesre, harmónikusra, még akkor is ha az előtte traumatikus volt. Testünk és lelkünk egy
-              egységet alkot. Rendelkezünk egy olyan "nyelvvel", amely a személyiségünkből, élettörtenetünkből
-              származik. Mozgásterápia során ezt a nyelvet "használjuk", azaz a testünk nyelvét és ezáltal testünket a
-              gyógyulás szolgálatába állítjuk.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-medium mb-2">
-              <strong>Irodalom:</strong>
-            </h3>
-            <p>
-              "Mindannyian olvassuk magunkat és a világot avégett, hogy megragadhassuk, mik vagyunk és hol vagyunk.
-              Azért olvasunk, hogy megértsünk valamit, vagy hogy elinduljunk a megértés útján." /Manguel/
-            </p>
-          </div>
+      <section className="mt-16">
+        <SectionTitle>Milyen eszközöket használok?</SectionTitle>
+        <div className="grid gap-5 md:grid-cols-2">
+          {tools.map((tool) => (
+            <article key={tool.title} className="rounded-[1.6rem] bg-secondary/80 p-6 md:p-8">
+              <h3 className="text-2xl font-medium">{tool.title}</h3>
+              <p className="mt-3 leading-relaxed text-foreground/80">{tool.text}</p>
+            </article>
+          ))}
         </div>
-      </div>
+      </section>
 
-      <div className="mb-12">
-        <p className="mb-4">A terápia történhet csoportos vagy egyéni formában.</p>
-
-        <blockquote className="border-l-4 border-primary pl-4 italic text-lg mb-6">
-          <p className="mb-2">„A művészetterápia a folyamatról szól, nem a termékről."</p>
-          <footer>Sorbara</footer>
+      <section className="mt-16 rounded-[2rem] border bg-card px-6 py-10 text-center md:px-12">
+        <p className="text-lg">A terápia történhet csoportos vagy egyéni formában.</p>
+        <blockquote className="mx-auto mt-6 max-w-2xl font-display text-2xl italic leading-snug md:text-3xl">
+          „A művészetterápia a folyamatról szól, nem a termékről.”
+          <footer className="mt-3 text-sm not-italic tracking-[0.16em] text-muted-foreground">Sorbara</footer>
         </blockquote>
-
-        <div className="flex justify-center">
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 w-full md:w-auto">
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <Button asChild size="lg">
             <Link href="/muveszetterapia/csoportok">Aktuális csoportok</Link>
           </Button>
+          <Button asChild size="lg" variant="outline">
+            <Link href="/muveszetterapia/gyermek">Gyermek művészetterápia</Link>
+          </Button>
         </div>
-      </div>
+      </section>
+
+      <CtaBand text="Ha egyéni folyamat érdekel, írj, és megbeszéljük, hogyan induljunk." />
     </div>
   )
 }

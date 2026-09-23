@@ -1,82 +1,81 @@
-import Image from "next/image"
+import { PageHeader, Photo } from "@/components/site"
+
+const pillars = [
+  { label: "Ember", text: "Az ember az alap." },
+  { label: "Idő", text: "Az idő és a hatékonyság versenyelőny." },
+  { label: "Pénz", text: "A pénz a végső célok egyike." },
+]
+
+const quotes = [
+  {
+    text: "Munkám során mindig törekszem arra, hogy alaposan megismerjem a céget, megismerjem az embereket, akik a cégnél dolgoznak vagy dolgozni szeretnének. Fontos szempont számomra, hogy a megfelelő ember kerüljön a megfelelő helyre. Megfelelő emberek, munkatársak nélkül egyetlen cég sem érhet el hosszútávú sikereket.",
+    author: "Horváth Ágnes",
+    dark: true,
+  },
+  {
+    text: "Tanácsadóként az igazi erősségem az, hogy tudatlan vagyok, és felteszek néhány kérdést.",
+    author: "Peter Drucker",
+    dark: false,
+  },
+  {
+    text: "Olyan tanácsadó vagyok, aki a figyelmével és az intuíciójával dolgozik. Megfigyelem az adott helyzetet, problémát, ezek alapján fel tudom állítani a tényálláshoz legjobban illeszkedő tervet, és a legmegfelelőbb innovációs ötlet kidolgozására motiválom a résztvevőket.",
+    author: "Horváth Ágnes",
+    dark: false,
+  },
+  {
+    text: "Tanácsadói erősségem, hogy határozott célok felállításához tudom hozzásegíteni a hozzám fordulókat és az ehhez szükséges lépéseket világos és határozott mederbe tudom terelni.",
+    author: "Horváth Ágnes",
+    dark: true,
+  },
+]
 
 export default function VisionPage() {
   return (
     <div className="container mx-auto px-4 py-16 md:py-20">
-      <p className="eyebrow mb-3 text-center">Irány</p>
-      <h1 className="mb-12 text-center text-4xl font-medium md:text-6xl">Vízióm</h1>
+      <PageHeader
+        eyebrow="Irány"
+        title="Vízióm"
+        lead="Nálam központban az ember, az idő és a pénz áll."
+      />
 
-      <blockquote className="text-center italic text-xl mb-12">
-        <p>"Amit érdemes csinálni, azt érdemes jól csinálni."</p>
-        <footer className="mt-2 font-medium">Lord Chesterfield</footer>
+      <blockquote className="mx-auto max-w-3xl text-center">
+        <p className="font-display text-3xl italic leading-snug md:text-4xl">
+          „Amit érdemes csinálni, azt érdemes jól csinálni.”
+        </p>
+        <footer className="mt-4 text-sm uppercase tracking-[0.18em] text-muted-foreground">Lord Chesterfield</footer>
       </blockquote>
 
-      <div className="mb-12">
-        <p className="text-lg mb-6">
-          Nálam központban az ember, az idő és a pénz áll. Az ember az alap, az idő és a hatékonyság versenyelőny, a
-          pénz pedig a végső célok egyike.
-        </p>
-
-        <div className="flex justify-center mb-6">
-          <div className="relative w-full max-w-2xl h-64">
-              <Image
-                src="/images/szikla.jpg"
-                alt="Szikla"
-                fill
-                className="object-cover"
-                priority
-              />
-          </div>
-        </div>
+      <div className="mt-14 grid gap-4 md:grid-cols-3">
+        {pillars.map((pillar, index) => (
+          <article
+            key={pillar.label}
+            className="rounded-[1.6rem] border bg-card p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+          >
+            <span className="font-display text-4xl text-primary/35">0{index + 1}</span>
+            <h2 className="mt-4 text-3xl font-medium">{pillar.label}</h2>
+            <p className="mt-2 text-muted-foreground">{pillar.text}</p>
+          </article>
+        ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-        <div>
-          <blockquote className="bg-primary/10 p-6 rounded-lg h-full">
-            <p className="italic mb-4">
-              "
-              <strong>
-                Munkám során mindig törekszem arra, hogy alaposan megismerjem a céget, megismerjem az embereket, akik a
-                cégnél dolgoznak vagy dolgozni szeretnének. Fontos szempont számomra, hogy a megfelelő ember kerüljön a
-                megfelelő helyre. Megfelelő emberek, munkatársak nélkül egyetlen cég sem érhet el hosszútávú sikereket
-              </strong>
-              ."
-            </p>
-            <footer className="text-right font-medium">Horváth Ágnes</footer>
-          </blockquote>
-        </div>
+      <Photo src="/images/szikla.jpg" alt="Szikla" className="mx-auto mt-14 aspect-[16/7] w-full max-w-5xl" priority />
 
-        <div>
-          <blockquote className="bg-secondary/10 p-6 rounded-lg h-full">
-            <p className="italic mb-4">
-              "Tanácsadóként az igazi erősségem az, hogy tudatlan vagyok, és felteszek néhány kérdést."
-            </p>
-            <footer className="text-right font-medium">Peter Drucker</footer>
+      <div className="mt-14 grid gap-5 md:grid-cols-2">
+        {quotes.map((quote) => (
+          <blockquote
+            key={quote.author + quote.text.slice(0, 24)}
+            className={
+              quote.dark
+                ? "flex h-full flex-col rounded-[1.6rem] bg-foreground p-8 text-background"
+                : "flex h-full flex-col rounded-[1.6rem] border bg-card p-8"
+            }
+          >
+            <p className="flex-1 text-lg italic leading-relaxed">„{quote.text}”</p>
+            <footer className={quote.dark ? "mt-6 text-sm text-background/60" : "mt-6 text-sm text-muted-foreground"}>
+              {quote.author}
+            </footer>
           </blockquote>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div>
-          <blockquote className="bg-primary/10 p-6 rounded-lg h-full">
-            <p className="italic mb-4">
-              "Olyan tanácsadó vagyok, aki a figyelmével és az intuíciójával dolgozik. <br />
-              Megfigyelem az adott helyzetet, problémát, ezek alapján fel tudom állítani a tényálláshoz legjobban
-              illeszkedő tervet, és a legmegfelelőbb innovációs ötlet kidolgozására motiválom a résztvevőket."
-            </p>
-            <footer className="text-right font-medium">Horváth Ágnes</footer>
-          </blockquote>
-        </div>
-
-        <div>
-          <blockquote className="bg-secondary/10 p-6 rounded-lg h-full">
-            <p className="italic mb-4">
-              "Tanácsadói erősségem, hogy határozott célok felállításához tudom hozzásegíteni a hozzám fordulókat és az
-              ehhez szükséges lépéseket világos és határozott mederbe tudom terelni."
-            </p>
-            <footer className="text-right font-medium">Horváth Ágnes</footer>
-          </blockquote>
-        </div>
+        ))}
       </div>
     </div>
   )

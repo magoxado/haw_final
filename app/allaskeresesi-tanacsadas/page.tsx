@@ -1,61 +1,54 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { CtaBand, PageHeader, SectionTitle } from "@/components/site"
+
+const background = [
+  "Sok év, toborzási és HR oldalon eltöltött tapasztalat",
+  "Én is sokszor kerestem állást, sok interjún voltam",
+]
+
+const steps = [
+  "Megírod, milyen állást keresel vagyis mi a célod. Átküldöd a már meglévő önéletrajzodat. Ha nincs, akkor csak a célodat írod meg.",
+  "Időpontot egyeztetünk, amikor online beszélünk.",
+  "Időponttal együtt kapsz egy feladatot is, amelyet el kell készítened a beszélgetésünkre.",
+  "Online beszélgetés során átvesszük a fő pontokat, elmondom a javaslataimat az önéletrajzoddal kapcsolatosan.",
+  "Ha az interjútechnikádat szeretnéd fejleszteni, próbainterjúzunk, én leszek a HR-es, Te pedig a jelentkező.",
+]
 
 export default function JobSearchPage() {
   return (
     <div className="container mx-auto px-4 py-16 md:py-20">
-      <p className="eyebrow mb-3 text-center">Karrier</p>
-      <h1 className="mb-12 text-center text-4xl font-medium md:text-6xl">Álláskeresési- és karrier-tanácsadás</h1>
+      <PageHeader
+        eyebrow="Karrier"
+        title="Álláskeresési- és karrier-tanácsadás"
+        lead="Biztosan meglátom Benned az értéket és támogatlak, hogy képviselni is tudd."
+      />
 
-      
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-        <div>
-          <h2 className="text-2xl font-semibold mb-4">Ami mögöttem van:</h2>
-          <ul className="space-y-3">
-            <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <span>Sok év, toborzási és HR oldalon eltöltött tapasztalat</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <span>Én is sokszor kerestem állást, sok interjún voltam</span>
-            </li>
-          </ul>
-        </div>
-
-        <div className="flex items-center justify-center">
-          <h2 className="text-2xl font-semibold text-center">
-            Biztosan meglátom Benned az értéket és támogatlak, hogy képviselni is tudd.
-          </h2>
-        </div>
+      <div className="grid gap-4 md:grid-cols-2">
+        {background.map((item, index) => (
+          <article key={item} className="rounded-[1.6rem] border bg-card p-6 shadow-sm">
+            <p className="eyebrow">Ami mögöttem van</p>
+            <p className="mt-4 font-display text-2xl leading-snug">
+              <span className="mr-2 text-primary">0{index + 1}</span>
+              {item}
+            </p>
+          </article>
+        ))}
       </div>
 
-      <div className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6">Tanácsadás menete:</h2>
-        <ol className="space-y-4 list-decimal list-inside text-lg">
-          <li>
-            Megírod, milyen állást keresel vagyis mi a célod. Átküldöd a már meglévő önéletrajzodat. Ha nincs, akkor
-            csak a célodat írod meg.
-          </li>
-          <li>Időpontot egyeztetünk, amikor online beszélünk.</li>
-          <li>Időponttal együtt kapsz egy feladatot is, amelyet el kell készítened a beszélgetésünkre.</li>
-          <li>
-            Online beszélgetés során átvesszük a fő pontokat, elmondom a javaslataimat az önéletrajzoddal kapcsolatosan.
-          </li>
-          <li>
-            Ha az interjútechnikádat szeretnéd fejleszteni, próbainterjúzunk, én leszek a HR-es, Te pedig a jelentkező.
-          </li>
+      <section className="mt-16">
+        <SectionTitle>Tanácsadás menete</SectionTitle>
+        <ol className="relative space-y-4 border-l border-primary/30 pl-6 md:pl-8">
+          {steps.map((step, index) => (
+            <li key={step} className="relative rounded-[1.4rem] border bg-card p-5 shadow-sm md:p-6">
+              <span className="absolute -left-[2.15rem] top-6 grid h-8 w-8 place-items-center rounded-full bg-primary text-sm font-medium text-primary-foreground md:-left-[2.65rem]">
+                {index + 1}
+              </span>
+              <p className="text-lg leading-relaxed">{step}</p>
+            </li>
+          ))}
         </ol>
-      </div>
+      </section>
 
-<div className="text-center">
-        <h2 className="text-2xl font-semibold mb-6">Kezdjük el a közös munkát!</h2>
-        <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-          <Link href="/kapcsolat">Kapcsolatfelvétel</Link>
-        </Button>
-      </div>
+      <CtaBand text="Küldd el a célodat vagy az önéletrajzodat, és egyeztetünk egy online beszélgetést." />
     </div>
   )
 }
