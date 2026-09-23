@@ -13,6 +13,8 @@ const mainLinks = [
   { name: "Rólam", href: "/rolam" },
   { name: "Vízióm", href: "/vizom" },
   { name: "Coaching", href: "/coaching" },
+  { name: "Management", href: "/management-trening" },
+  { name: "Szervezet", href: "/szervezetfejlesztes" },
   { name: "Művészetterápia", href: "/muveszetterapia" },
   { name: "Álláskeresés", href: "/allaskeresesi-tanacsadas" },
   { name: "Kinek tudok segíteni?", href: "/kinek-tudok-segiteni" },

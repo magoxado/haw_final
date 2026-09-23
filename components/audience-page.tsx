@@ -83,7 +83,7 @@ export default function AudiencePage({ initial }: { initial: "cegek" | "magan" }
             onClick={() => setTab(id)}
             className={cn(
               "rounded-full px-4 py-2 text-sm transition-colors",
-              tab === id ? "bg-[#1B3A4B] text-white" : "bg-white text-zinc-900 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:bg-zinc-100",
+              tab === id ? "bg-[#1B3A4B] text-white" : "border border-zinc-300 bg-white text-zinc-900 shadow-[0_8px_20px_-8px_rgba(27,58,75,0.25)] hover:border-[#1B3A4B]/40",
             )}
           >
             {label}

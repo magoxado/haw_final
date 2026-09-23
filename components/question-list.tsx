@@ -7,7 +7,7 @@ export function QuestionList({ items }: { items: { q: string; a: string }[] }) {
   return (
     <Accordion type="single" collapsible className={surfaceClass}>
       {items.map((item, index) => (
-        <AccordionItem key={item.q} value={`q-${index}`} className="border-zinc-100">
+        <AccordionItem key={item.q} value={`q-${index}`} className="border-zinc-200">
           <AccordionTrigger className="text-left hover:no-underline">
             <span className="flex items-start gap-4">
               <span className="mt-0.5 w-8 shrink-0 font-mono text-sm tabular-nums text-zinc-400">

@@ -4,7 +4,7 @@ import { DetailPage } from "@/components/site"
 export default function AboutPage() {
   return (
     <DetailPage title="Rólam">
-      <h2 className="text-2xl font-semibold">Horváth Ágnes, fejlesztő, tanácsadó. (Megújítás mestere)</h2>
+      <h2 className="text-2xl font-semibold">Horváth Ágnes, fejlesztő, tanácsadó</h2>
       <p>Business coach, management tréner, szocio- és művészetterapeuta.</p>
       <p>
         Agrármenedzser és közgazdász végzettséggel rendelkezem, és munkám során mindig kiemelt figyelmet fordítok az
@@ -35,11 +35,11 @@ export default function AboutPage() {
           ahogy elkezdődik a folyamat, kerülnek felszínre az újabb és újabb javaslatok, ötletek és amelyekből a végén
           kikerekedik egy megvalósítható, minden oldalról jól megtámogatott terv. Csodálatos ez a folyamat.”
         </p>
-        <footer className="mt-4 text-sm not-italic text-zinc-500">
-          Forrás:{" "}
+        <footer className="mt-4 text-sm not-italic">
+          <p className="font-medium text-[#1B3A4B]">Horváth Ágnes</p>
           <a
             href="https://read-blog.blog.hu/2021/01/25/haw-the_way_rendszer_a_munkadban"
-            className="text-[#1B3A4B] underline underline-offset-4"
+            className="mt-1 inline-block text-zinc-500 underline underline-offset-4"
             target="_blank"
             rel="noopener noreferrer"
           >

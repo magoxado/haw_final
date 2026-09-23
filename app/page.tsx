@@ -15,13 +15,13 @@ const services = [
   {
     title: "Management tréning",
     text: "Vezetői készségek, delegálás és hatékony csapatirányítás.",
-    href: "/kinek-tudok-segiteni?cel=cegek",
+    href: "/management-trening",
     icon: Users,
   },
   {
     title: "Szervezetfejlesztés",
     text: "Folyamatok és együttműködés optimalizálása, a megfelelő ember a megfelelő helyen.",
-    href: "/kinek-tudok-segiteni?cel=cegek",
+    href: "/szervezetfejlesztes",
     icon: Network,
   },
   {
@@ -145,7 +145,7 @@ export default function Home() {
             <Link
               key={service.title}
               href={service.href}
-              className="group flex h-full flex-col justify-between rounded-3xl border border-zinc-100 bg-white p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(27,58,75,0.12)]"
+              className={cn(surfaceClass, surfaceHoverClass, "group flex h-full flex-col justify-between md:p-6")}
             >
               <div>
                 <service.icon className="mb-5 h-8 w-8 text-[#1B3A4B]" />
@@ -210,7 +210,7 @@ export default function Home() {
       </section>
 
       <section className="container mx-auto px-4 pb-14">
-        <div className="flex flex-col gap-6 rounded-3xl bg-white p-6 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] sm:flex-row sm:items-center sm:justify-between md:p-8">
+        <div className={cn(surfaceClass, "flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between")}>
           <div>
             <h2 className="text-2xl font-semibold">Vegyük fel a kapcsolatot</h2>
             <p className="mt-2 text-zinc-600">Egy rövid, kötelezettségmentes beszélgetés a céljaidról.</p>

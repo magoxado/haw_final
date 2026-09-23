@@ -7,6 +7,8 @@ const pages = [
   { name: "Vízióm", href: "/vizom" },
   { name: "Kinek tudok segíteni?", href: "/kinek-tudok-segiteni" },
   { name: "Coaching", href: "/coaching" },
+  { name: "Management tréning", href: "/management-trening" },
+  { name: "Szervezetfejlesztés", href: "/szervezetfejlesztes" },
   { name: "Művészetterápia", href: "/muveszetterapia" },
   { name: "Álláskeresési tanácsadás", href: "/allaskeresesi-tanacsadas" },
   { name: "Kapcsolat", href: "/kapcsolat" },

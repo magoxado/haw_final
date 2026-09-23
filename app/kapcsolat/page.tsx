@@ -60,7 +60,7 @@ export default function ContactPage() {
           </div>
         </aside>
 
-        <div className="rounded-3xl bg-[#F4F4F5] p-6 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] md:p-8">
+        <div className={surfaceClass}>
           <ContactForm />
         </div>
       </div>
