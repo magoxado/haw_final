@@ -59,7 +59,7 @@ export default function AudiencePage({ initial }: { initial: "cegek" | "magan" }
             onClick={() => setTab(id)}
             className={cn(
               "rounded-full px-4 py-2 text-sm transition-colors",
-              tab === id ? "bg-[#0D0D0E] text-white" : "bg-white text-zinc-900 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:bg-zinc-100",
+              tab === id ? "bg-[#1B3A4B] text-white" : "bg-white text-zinc-900 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:bg-zinc-100",
             )}
           >
             {label}
@@ -93,27 +93,29 @@ export default function AudiencePage({ initial }: { initial: "cegek" | "magan" }
               </p>
               <BorderedList items={individuals} />
               <div className="flex flex-col gap-3 text-sm sm:flex-row">
-                <Link href="/coaching" className="underline">
+                <Link href="/coaching" className="font-medium text-[#1B3A4B] underline underline-offset-4">
                   Coaching
                 </Link>
-                <Link href="/allaskeresesi-tanacsadas" className="underline">
+                <Link href="/allaskeresesi-tanacsadas" className="font-medium text-[#1B3A4B] underline underline-offset-4">
                   Álláskeresési tanácsadás
                 </Link>
-                <Link href="/muveszetterapia" className="underline">
+                <Link href="/muveszetterapia" className="font-medium text-[#1B3A4B] underline underline-offset-4">
                   Művészetterápia
                 </Link>
               </div>
             </>
           )}
         </div>
-        <div className="flex h-full flex-col gap-6">
-          <Photo
-            src={tab === "cegek" ? "/images/logo.jpg" : "/images/celtudatos.jpg"}
-            alt={tab === "cegek" ? "Céges tanácsadás" : "Céltudatos"}
-            contain={tab === "cegek"}
-            className={tab === "cegek" ? "min-h-0" : "aspect-[4/5] w-full min-h-0"}
-          />
-          <ContactCard />
+        <div className="lg:sticky lg:top-24">
+          {tab === "magan" ? (
+            <Photo
+              src="/images/celtudatos.jpg"
+              alt="Céltudatos"
+              caption="Magánszemélyeknek"
+              className="mb-4"
+            />
+          ) : null}
+          <ContactCard mark={tab === "cegek" ? "/images/logo.jpg" : undefined} />
         </div>
       </div>
     </div>

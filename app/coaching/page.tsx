@@ -1,17 +1,45 @@
 import { CtaBand, PageHeader, Photo, SectionTitle } from "@/components/site"
 import { surfaceClass, surfaceHoverClass } from "@/components/surface"
+import { QuestionList } from "@/components/question-list"
 import { cn } from "@/lib/utils"
 
 const questions = [
-  "Hogyan találjak új karrierutat?",
-  "Hogyan kérjek előléptetést?",
-  "Mit tegyek, ha kiégtem a munkahelyemen?",
-  "Milyen karriert válasszak?",
-  "Mikor érdemes karriert váltani?",
-  "Hogyan építsek önbizalmat az állásinterjú előtt?",
-  "Hogyan egyensúlyozzam a munkát és a magánéletet?",
-  "Miért nem haladok előre a karrieremben?",
-  "Hogyan találjam meg a valódi szenvedélyemet a munkámban?",
+  {
+    q: "Hogyan találjak új karrierutat?",
+    a: "A tehetségedből és a céljaidból indulunk, és abból rakjuk össze a következő lépést.",
+  },
+  {
+    q: "Hogyan kérjek előléptetést?",
+    a: "Megnézzük, mit tudsz már képviselni, és hogyan mondod el ezt egy vezetőnek.",
+  },
+  {
+    q: "Mit tegyek, ha kiégtem a munkahelyemen?",
+    a: "A stressz és a lelkesedés visszaszerzése praktikus eszközökkel indul, nem egy újabb elváráslistával.",
+  },
+  {
+    q: "Milyen karriert válasszak?",
+    a: "Először azt tisztázzuk, mi illik az értékeidhez, és csak utána a pozíció nevét.",
+  },
+  {
+    q: "Mikor érdemes karriert váltani?",
+    a: "Akkor, ha a jelenlegi hely már nem ad irányt, és van egy lépés, amit tényleg meg tudsz tenni.",
+  },
+  {
+    q: "Hogyan építsek önbizalmat az állásinterjú előtt?",
+    a: "A saját eredményeidből indulunk, hogy az interjún ne egy idegen szerepet kelljen eljátszanod.",
+  },
+  {
+    q: "Hogyan egyensúlyozzam a munkát és a magánéletet?",
+    a: "A határokat a naptáradban és a feladataidban keressük meg, nem egy elvont elvben.",
+  },
+  {
+    q: "Miért nem haladok előre a karrieremben?",
+    a: "Megnézzük, mi tart a helyeden: készség, önbizalom, vagy egy rendszer, ami nem enged tovább.",
+  },
+  {
+    q: "Hogyan találjam meg a valódi szenvedélyemet a munkámban?",
+    a: "Azt keressük, ami energizál, és amit a munkád már most is előhív belőled.",
+  },
 ]
 
 const audiences = [
@@ -87,21 +115,12 @@ export default function CoachingPage() {
           meghatározza a kapcsolatomat ügyfeleimmel. Hiszem, hogy a kedvesség ereje segíti a bizalom és a nyitottság
           kialakítását és hozzájárul ahhoz, hogy ügyfeleim önmagukat adhassák.
         </p>
-        <Photo src="/images/onarckep.jpg" alt="Coaching támogatás" className="aspect-[5/4] w-full min-h-0" />
+        <Photo src="/images/onarckep.jpg" alt="Coaching támogatás" ratio="aspect-[5/4]" />
       </div>
 
       <section className="mt-16">
         <SectionTitle>Kérdések, amelyek felmerülhetnek benned</SectionTitle>
-        <ol className={cn(surfaceClass, "grid gap-x-8 md:grid-cols-2")}>
-          {questions.map((question, index) => (
-            <li key={question} className="flex gap-4 border-b border-zinc-100 py-4">
-              <span className="w-8 shrink-0 font-mono text-sm tabular-nums text-zinc-400">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <p>{question}</p>
-            </li>
-          ))}
-        </ol>
+        <QuestionList items={questions} />
       </section>
 
       <section className="mt-16">

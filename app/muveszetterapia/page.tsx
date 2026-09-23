@@ -71,7 +71,8 @@ export default function ArtTherapyPage() {
         src="/images/muveszet.jpg"
         alt="Művészetterápia"
         caption="Szia! Örülök, hogy itt vagy!"
-        className="mx-auto aspect-[4/5] w-full max-w-sm min-h-0"
+        className="mx-auto max-w-sm"
+        ratio="aspect-[4/5]"
         priority
       />
 

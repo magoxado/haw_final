@@ -1,4 +1,4 @@
-import Image from "next/image"
+import { Photo } from "@/components/site"
 import { surfaceClass } from "@/components/surface"
 
 const statements = ["Az ember lényeges.", "Az idő érték.", "A hatékonyság eredmény."]
@@ -33,13 +33,7 @@ export default function VisionPage() {
       <p className="mt-4 text-sm text-muted-foreground">Lord Chesterfield</p>
 
       <div className="mt-16 grid items-start gap-10 border-t border-border pt-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-        <div className="relative">
-          <div className="pointer-events-none absolute -left-6 top-8 h-40 w-40 rounded-full bg-amber-200/40 blur-3xl" />
-          <div className="absolute inset-3 -rotate-2 scale-[1.02] rounded-3xl bg-zinc-200/60" />
-          <div className="relative z-10 aspect-[3/4] overflow-hidden rounded-3xl shadow-xl">
-            <Image src="/images/selfie.jpg" alt="Horváth Ágnes" fill className="object-cover" priority sizes="(min-width: 1024px) 40vw, 100vw" />
-          </div>
-        </div>
+        <Photo src="/images/selfie.jpg" alt="Horváth Ágnes" priority />
 
         <div className={surfaceClass}>
           <div className="space-y-3">

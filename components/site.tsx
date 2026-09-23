@@ -59,6 +59,7 @@ export function Photo({
   priority,
   caption,
   contain,
+  ratio = "aspect-[3/4]",
 }: {
   src: string
   alt: string
@@ -66,6 +67,7 @@ export function Photo({
   priority?: boolean
   caption?: string
   contain?: boolean
+  ratio?: string
 }) {
   if (contain) {
     return (
@@ -86,14 +88,11 @@ export function Photo({
   }
 
   return (
-    <figure className="relative">
-      <div className="pointer-events-none absolute -left-8 top-10 h-40 w-40 rounded-full bg-amber-200/40 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-6 -right-6 h-36 w-36 rounded-full bg-slate-300/40 blur-3xl" />
-      <div className="absolute inset-3 -rotate-2 scale-[1.02] rounded-3xl bg-zinc-200/60" />
-      <div className={cn("relative z-10 min-h-72 overflow-hidden rounded-3xl shadow-xl", className)}>
+    <figure className={cn("w-full", className)}>
+      <div className={cn("relative overflow-hidden rounded-3xl shadow-[0_12px_30px_-12px_rgba(27,58,75,0.35)]", ratio)}>
         <Image src={src} alt={alt} fill className="object-cover" priority={priority} sizes="(min-width: 768px) 480px, 100vw" />
       </div>
-      {caption ? <figcaption className="relative z-10 mt-4 text-sm text-muted-foreground">{caption}</figcaption> : null}
+      {caption ? <figcaption className="mt-3 text-sm text-zinc-600">{caption}</figcaption> : null}
     </figure>
   )
 }
@@ -123,7 +122,9 @@ export function DetailPage({
     <div className="container mx-auto px-4 py-16 md:px-8">
       <h1 className="text-3xl font-semibold tracking-tight md:text-5xl">{title}</h1>
       <div className="mt-10 grid items-start gap-10 lg:grid-cols-[280px_1fr]">
-        <Photo src="/images/selfie.jpg" alt="Horváth Ágnes" className="aspect-[3/4] w-full min-h-0" priority />
+        <div className="lg:sticky lg:top-24">
+          <Photo src="/images/selfie.jpg" alt="Horváth Ágnes" priority />
+        </div>
         <div className={cn(surfaceClass, "space-y-4 text-base leading-relaxed text-zinc-600 [&_h2]:text-foreground")}>
           {children}
         </div>
@@ -148,9 +149,14 @@ export function BorderedList({ items }: { items: string[] }) {
   )
 }
 
-export function ContactCard() {
+export function ContactCard({ mark }: { mark?: string }) {
   return (
-    <aside className={cn(surfaceClass, "lg:sticky lg:top-24")}>
+    <aside className={surfaceClass}>
+      {mark ? (
+        <div className="relative mb-5 h-16 w-16">
+          <Image src={mark} alt="HAW" fill className="object-contain mix-blend-multiply" sizes="64px" />
+        </div>
+      ) : null}
       <h2 className="text-lg font-semibold">Kapcsolat</h2>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
         Foglalj egy rövid, kötelezettségmentes konzultációt, és beszéljük át a céljaidat.

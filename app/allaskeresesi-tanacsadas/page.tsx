@@ -35,13 +35,13 @@ export default function JobSearchPage() {
         </ol>
       </section>
 
-      <section className="mt-16">
+      <section className="mt-8">
         <SectionTitle>Tanácsadás menete</SectionTitle>
-        <ol className="grid gap-4 lg:grid-cols-5">
+        <ol className={cn(surfaceClass, "divide-y divide-zinc-100")}>
           {steps.map((step, index) => (
-            <li key={step} className={surfaceClass}>
+            <li key={step} className="grid gap-3 py-4 first:pt-0 last:pb-0 md:grid-cols-[4rem_1fr]">
               <span className="font-mono text-sm tabular-nums text-zinc-400">0{index + 1}</span>
-              <p className="mt-3 text-sm leading-relaxed">{step}</p>
+              <p className="leading-relaxed">{step}</p>
             </li>
           ))}
         </ol>
