@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { surfaceClass } from "@/components/surface"
 import { ArrowLeft, Clock3, Palette, Users } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -39,7 +40,6 @@ export default function GroupsComingSoonPage() {
         </Link>
 
         <div className="max-w-3xl">
-          <p className="mb-3 text-sm text-muted-foreground">Csoportok, hamarosan</p>
           <h1 className="text-3xl font-semibold tracking-tight md:text-5xl">A csoportjaim hamarosan érkeznek.</h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
             Jelenleg intenzíven dolgozom a csoportjaim szervezésén, hogy a lehető legjobb és leghatékonyabb élményt
@@ -49,7 +49,7 @@ export default function GroupsComingSoonPage() {
 
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {upcoming.map((item) => (
-            <article key={item.title} className="border-t border-border py-6">
+            <article key={item.title} className={surfaceClass}>
               <item.icon className="h-4 w-4 text-muted-foreground" />
               <h2 className="mt-3 text-lg font-semibold tracking-tight">{item.title}</h2>
               <p className="mt-3 text-muted-foreground">{item.text}</p>

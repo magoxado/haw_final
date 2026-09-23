@@ -5,15 +5,15 @@
 @layer base {
   :root {
     --background: 0 0% 98.4%;
-    --foreground: 240 6% 10%;
+    --foreground: 240 4% 5%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 6% 10%;
+    --card-foreground: 240 4% 5%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 240 6% 10%;
 
-    --primary: 240 6% 10%;
+    --primary: 240 4% 5%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 240 5% 96%;
@@ -76,7 +76,12 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-[#FBFBFB] text-[#0D0D0E] antialiased;
+  }
+
+  input,
+  textarea {
+    @apply rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-zinc-900 placeholder:text-zinc-400 transition-colors focus:border-zinc-900 focus:outline-none;
   }
 
   h1,

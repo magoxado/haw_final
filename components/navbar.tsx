@@ -28,21 +28,21 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
-      <div className="container flex h-14 items-center justify-between gap-4">
+    <header className="sticky top-0 z-50 w-full border-b border-zinc-100 bg-white/80 backdrop-blur-md">
+      <div className="container flex h-16 items-center justify-between gap-3">
         <Link href="/" className="flex items-center gap-3 shrink-0 text-sm font-semibold">
           HAW
           <span className="hidden font-normal text-muted-foreground sm:inline">Horváth Ágnes</span>
         </Link>
 
-        <nav className="hidden items-center gap-4 xl:flex">
+        <nav className="hidden items-center gap-1 xl:flex">
           {mainLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-medium text-foreground/65 transition-colors hover:text-foreground",
-                isActive(pathname, item.href) && "text-foreground",
+                "rounded-full px-3 py-1.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-200",
+                isActive(pathname, item.href) && "bg-zinc-100",
               )}
             >
               {item.name}
@@ -51,7 +51,7 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button asChild className="hidden sm:inline-flex">
+          <Button asChild className="hidden rounded-full px-4 sm:inline-flex">
             <Link href="/kapcsolat">Kapcsolat</Link>
           </Button>
 
@@ -70,8 +70,8 @@ export default function Navbar() {
                     href={item.href}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "rounded-md px-3 py-3 text-base font-medium transition-colors hover:bg-accent",
-                      isActive(pathname, item.href) ? "text-primary" : "text-foreground/80",
+                      "rounded-full px-4 py-2 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-200",
+                      isActive(pathname, item.href) && "bg-zinc-100",
                     )}
                   >
                     {item.name}

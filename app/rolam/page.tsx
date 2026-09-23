@@ -2,7 +2,7 @@ import { DetailPage } from "@/components/site"
 
 export default function AboutPage() {
   return (
-    <DetailPage category="Bemutatkozás" title="Rólam">
+    <DetailPage title="Rólam">
       <h2 className="text-2xl font-semibold">Horváth Ágnes, fejlesztő, tanácsadó. (Megújítás mestere)</h2>
       <p>Business coach, management tréner, szocio- és művészetterapeuta.</p>
       <p>

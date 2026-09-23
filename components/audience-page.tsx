@@ -41,10 +41,7 @@ export default function AudiencePage({ initial }: { initial: "cegek" | "magan" }
 
   return (
     <div className="container mx-auto px-4 py-16 md:px-8">
-      <p className="inline-flex rounded-md border border-border px-2 py-1 text-xs uppercase text-muted-foreground">
-        Együttműködés
-      </p>
-      <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">Kinek tudok segíteni?</h1>
+      <h1 className="text-3xl font-semibold tracking-tight md:text-5xl">Kinek tudok segíteni?</h1>
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
         Ugyanaz a munka két oldalról: cégeknek a működés és a csapat, magánszemélyeknek a karrier és a kiégés.
       </p>
@@ -61,8 +58,8 @@ export default function AudiencePage({ initial }: { initial: "cegek" | "magan" }
             type="button"
             onClick={() => setTab(id)}
             className={cn(
-              "rounded-md border px-3 py-2 text-sm",
-              tab === id ? "border-foreground bg-foreground text-background" : "border-border bg-transparent text-muted-foreground",
+              "rounded-full px-4 py-2 text-sm transition-colors",
+              tab === id ? "bg-[#0D0D0E] text-white" : "bg-white text-zinc-900 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:bg-zinc-100",
             )}
           >
             {label}
@@ -113,7 +110,8 @@ export default function AudiencePage({ initial }: { initial: "cegek" | "magan" }
           <Photo
             src={tab === "cegek" ? "/images/logo.jpg" : "/images/celtudatos.jpg"}
             alt={tab === "cegek" ? "Céges tanácsadás" : "Céltudatos"}
-            className="aspect-[4/5] w-full min-h-0"
+            contain={tab === "cegek"}
+            className={tab === "cegek" ? "min-h-0" : "aspect-[4/5] w-full min-h-0"}
           />
           <ContactCard />
         </div>

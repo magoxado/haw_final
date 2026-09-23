@@ -1,4 +1,6 @@
 import { CtaBand, PageHeader, SectionTitle } from "@/components/site"
+import { surfaceClass } from "@/components/surface"
+import { cn } from "@/lib/utils"
 
 const background = [
   "Sok év, toborzási és HR oldalon eltöltött tapasztalat",
@@ -17,17 +19,16 @@ export default function JobSearchPage() {
   return (
     <div className="container mx-auto px-4 py-16 md:py-20">
       <PageHeader
-        eyebrow="Karrier"
         title="Álláskeresési- és karrier-tanácsadás"
         lead="Biztosan meglátom benned az értéket, és támogatlak, hogy képviselni is tudd."
       />
 
       <section>
         <SectionTitle>Ami mögöttem van</SectionTitle>
-        <ol className="border-t border-border">
+        <ol className={cn(surfaceClass, "divide-y divide-zinc-100")}>
           {background.map((item, index) => (
-            <li key={item} className="flex gap-4 border-b border-border py-4">
-              <span className="font-mono text-sm text-zinc-400">0{index + 1}</span>
+            <li key={item} className="flex gap-4 py-4 first:pt-0 last:pb-0">
+              <span className="w-8 shrink-0 font-mono text-sm tabular-nums text-zinc-400">0{index + 1}</span>
               <p className="leading-relaxed">{item}</p>
             </li>
           ))}
@@ -36,11 +37,11 @@ export default function JobSearchPage() {
 
       <section className="mt-16">
         <SectionTitle>Tanácsadás menete</SectionTitle>
-        <ol className="border-t border-border">
+        <ol className="grid gap-4 lg:grid-cols-5">
           {steps.map((step, index) => (
-            <li key={step} className="grid gap-3 border-b border-border py-5 md:grid-cols-[4rem_1fr]">
-              <span className="font-mono text-sm text-zinc-400">0{index + 1}</span>
-              <p className="leading-relaxed">{step}</p>
+            <li key={step} className={surfaceClass}>
+              <span className="font-mono text-sm tabular-nums text-zinc-400">0{index + 1}</span>
+              <p className="mt-3 text-sm leading-relaxed">{step}</p>
             </li>
           ))}
         </ol>

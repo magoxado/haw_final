@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import { CtaBand, PageHeader } from "@/components/site"
+import { surfaceClass, surfaceHoverClass } from "@/components/surface"
+import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = {
   title: "Gyermek művészetterápia - HAW",
@@ -29,9 +31,9 @@ const features = [
 export default function ChildArtTherapyPage() {
   return (
     <div className="container mx-auto px-4 py-16 md:py-20">
-      <PageHeader eyebrow="Gyermekeknek" title="Gyermek művészetterápia" lead="Horváth Ágnes · gyermek művészetterapeuta" />
+      <PageHeader title="Gyermek művészetterápia" lead="Horváth Ágnes, gyermek művészetterapeuta" />
 
-      <section className="max-w-3xl">
+      <section className={cn(surfaceClass, "max-w-3xl")}>
         <p className="text-lg leading-relaxed">
           Örülök, hogy itt vagy. Művészetterapeutaként külön figyelmet fordítok a gyermekekkel való munkára. Hiszem, hogy
           a művészet híd lehet a gyermeki lélek megértéséhez és a gyógyuláshoz.
@@ -42,17 +44,17 @@ export default function ChildArtTherapyPage() {
         </p>
       </section>
 
-      <section className="mt-12 grid gap-8 border-t border-border pt-8 sm:grid-cols-2">
+      <section className="mt-6 grid gap-4 sm:grid-cols-2">
         {features.map((feature, index) => (
-          <article key={feature.title}>
-            <span className="font-mono text-sm text-zinc-400">0{index + 1}</span>
-            <h2 className="mt-3 text-lg font-semibold">{feature.title}</h2>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{feature.text}</p>
+          <article key={feature.title} className={cn(surfaceClass, surfaceHoverClass)}>
+            <span className="font-mono text-sm tabular-nums text-zinc-400">0{index + 1}</span>
+            <h2 className="mt-3 text-2xl font-semibold">{feature.title}</h2>
+            <p className="mt-3 text-base leading-relaxed text-zinc-600">{feature.text}</p>
           </article>
         ))}
       </section>
 
-      <blockquote className="mt-10 border-t border-border pt-8 text-lg leading-relaxed">
+      <blockquote className={cn(surfaceClass, "mt-6 text-lg leading-relaxed")}>
         „A művészetterápia olyan terápiás folyamat, ahol a művészetet eszközként használjuk lelki történéseink
         megértéséhez és nonverbális kommunikációhoz.”
       </blockquote>

@@ -1,4 +1,6 @@
 import { CtaBand, PageHeader, Photo, SectionTitle } from "@/components/site"
+import { surfaceClass, surfaceHoverClass } from "@/components/surface"
+import { cn } from "@/lib/utils"
 
 const questions = [
   "Hogyan találjak új karrierutat?",
@@ -75,13 +77,12 @@ export default function CoachingPage() {
   return (
     <div className="container mx-auto px-4 py-16 md:py-20">
       <PageHeader
-        eyebrow="Karrier"
         title="Coaching"
         lead="Coachként segítek neked átlépni az akadályokat és megtalálni a számodra ideális utat a szakmai életedben."
       />
 
       <div className="grid items-center gap-10 lg:grid-cols-2">
-        <p className="text-lg leading-relaxed text-foreground/85">
+        <p className={cn(surfaceClass, "text-lg leading-relaxed")}>
           Az elfogadás és ítéletmentesség mellett a kedvességet is alapvető karizmatikus jegyemnek tartom, amely
           meghatározza a kapcsolatomat ügyfeleimmel. Hiszem, hogy a kedvesség ereje segíti a bizalom és a nyitottság
           kialakítását és hozzájárul ahhoz, hogy ügyfeleim önmagukat adhassák.
@@ -91,10 +92,12 @@ export default function CoachingPage() {
 
       <section className="mt-16">
         <SectionTitle>Kérdések, amelyek felmerülhetnek benned</SectionTitle>
-        <ol className="grid border-t border-border md:grid-cols-2">
+        <ol className={cn(surfaceClass, "grid gap-x-8 md:grid-cols-2")}>
           {questions.map((question, index) => (
-            <li key={question} className="flex gap-4 border-b border-border py-4 md:odd:pr-8 md:even:pl-8">
-              <span className="font-mono text-sm text-zinc-400">{String(index + 1).padStart(2, "0")}</span>
+            <li key={question} className="flex gap-4 border-b border-zinc-100 py-4">
+              <span className="w-8 shrink-0 font-mono text-sm tabular-nums text-zinc-400">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               <p>{question}</p>
             </li>
           ))}
@@ -103,15 +106,13 @@ export default function CoachingPage() {
 
       <section className="mt-16">
         <SectionTitle>Kinek segítek?</SectionTitle>
-        <div className="grid gap-8 border-t border-border pt-8 lg:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-3">
           {audiences.map((group) => (
-            <article key={group.title}>
+            <article key={group.title} className={cn(surfaceClass, surfaceHoverClass)}>
               <h3 className="text-lg font-semibold">{group.title}</h3>
-              <ul className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
+              <ul className="mt-4 space-y-3 text-sm leading-relaxed text-zinc-600">
                 {group.points.map((point) => (
-                  <li key={point} className="border-t border-border pt-3">
-                    {point}
-                  </li>
+                  <li key={point}>{point}</li>
                 ))}
               </ul>
             </article>
@@ -121,12 +122,12 @@ export default function CoachingPage() {
 
       <section className="mt-16">
         <SectionTitle>Amit nyújtok</SectionTitle>
-        <div className="grid gap-8 border-t border-border pt-8 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           {offers.map((offer, index) => (
-            <article key={offer.title}>
-              <span className="font-mono text-sm text-zinc-400">0{index + 1}</span>
+            <article key={offer.title} className={cn(surfaceClass, surfaceHoverClass)}>
+              <span className="font-mono text-sm tabular-nums text-zinc-400">0{index + 1}</span>
               <h3 className="mt-3 text-lg font-semibold">{offer.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{offer.text}</p>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-600">{offer.text}</p>
             </article>
           ))}
         </div>
@@ -134,11 +135,11 @@ export default function CoachingPage() {
 
       <section className="mt-16">
         <SectionTitle>Miért velem?</SectionTitle>
-        <div className="grid gap-8 border-t border-border pt-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {reasons.map((reason) => (
-            <article key={reason.title}>
+            <article key={reason.title} className={cn(surfaceClass, surfaceHoverClass)}>
               <h3 className="text-lg font-semibold">{reason.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{reason.text}</p>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-600">{reason.text}</p>
             </article>
           ))}
         </div>
@@ -146,7 +147,7 @@ export default function CoachingPage() {
 
       <div className="mt-16 grid gap-4 md:grid-cols-3">
         {lines.map((line) => (
-          <p key={line} className="border-t border-border pt-6 text-base leading-relaxed">
+          <p key={line} className={cn(surfaceClass, "text-base leading-relaxed")}>
             „{line}”
           </p>
         ))}

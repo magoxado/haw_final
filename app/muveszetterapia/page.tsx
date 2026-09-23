@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { CtaBand, PageHeader, Photo, SectionTitle } from "@/components/site"
+import { surfaceClass, surfaceHoverClass } from "@/components/surface"
+import { cn } from "@/lib/utils"
 
 const benefits = [
   {
@@ -61,7 +63,6 @@ export default function ArtTherapyPage() {
   return (
     <div className="container mx-auto px-4 py-16 md:py-20">
       <PageHeader
-        eyebrow="Terápia"
         title="Művészetterápia"
         lead="Van benne valami természetes és magától értetődő, mégis felszabadító, és gondolkodásra késztet."
       />
@@ -76,12 +77,12 @@ export default function ArtTherapyPage() {
 
       <section className="mt-16">
         <SectionTitle>Mire jó?</SectionTitle>
-        <div className="grid gap-8 border-t border-border pt-8 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-3">
           {benefits.map((item, index) => (
-            <article key={item.title}>
-              <p className="font-mono text-sm text-zinc-400">0{index + 1}</p>
+            <article key={item.title} className={cn(surfaceClass, surfaceHoverClass)}>
+              <p className="font-mono text-sm tabular-nums text-zinc-400">0{index + 1}</p>
               <h3 className="mt-3 text-lg font-semibold">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-600">{item.text}</p>
             </article>
           ))}
         </div>
@@ -89,10 +90,10 @@ export default function ArtTherapyPage() {
 
       <section className="mt-16">
         <SectionTitle>Mi történik?</SectionTitle>
-        <ol className="border-t border-border">
+        <ol className={cn(surfaceClass, "divide-y divide-zinc-100")}>
           {process.map((item, index) => (
-            <li key={item} className="grid gap-3 border-b border-border py-5 md:grid-cols-[4rem_1fr]">
-              <span className="font-mono text-sm text-zinc-400">0{index + 1}</span>
+            <li key={item} className="grid gap-3 py-5 md:grid-cols-[4rem_1fr]">
+              <span className="font-mono text-sm tabular-nums text-zinc-400">0{index + 1}</span>
               <p className="leading-relaxed">{item}</p>
             </li>
           ))}
@@ -101,14 +102,12 @@ export default function ArtTherapyPage() {
 
       <section className="mt-16">
         <SectionTitle>Milyen eszközöket használok?</SectionTitle>
-        <div className="grid gap-8 border-t border-border pt-8 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           {tools.map((tool) => (
-            <article key={tool.title}>
+            <article key={tool.title} className={cn(surfaceClass, surfaceHoverClass)}>
               <h3 className="text-lg font-semibold">{tool.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{tool.text}</p>
-              {"source" in tool && tool.source ? (
-                <p className="mt-3 text-sm text-foreground">{tool.source}</p>
-              ) : null}
+              <p className="mt-3 text-sm leading-relaxed text-zinc-600">{tool.text}</p>
+              {"source" in tool && tool.source ? <p className="mt-3 text-sm font-medium">{tool.source}</p> : null}
             </article>
           ))}
         </div>
@@ -117,15 +116,19 @@ export default function ArtTherapyPage() {
       <section className="mt-16">
         <SectionTitle>Csoport vagy egyéni folyamat</SectionTitle>
         <p className="max-w-2xl text-muted-foreground">A terápia történhet csoportos vagy egyéni formában.</p>
-        <blockquote className="mt-8 max-w-2xl border-t border-border pt-6 text-lg leading-relaxed">
+        <blockquote className={cn(surfaceClass, "mt-8 max-w-2xl text-lg leading-relaxed")}>
           „A művészetterápia a folyamatról szól, nem a termékről.”
-          <footer className="mt-3 text-sm text-muted-foreground">Sorbara</footer>
+          <footer className="mt-3 text-sm text-zinc-500">Sorbara</footer>
         </blockquote>
-        <div className="mt-8 grid gap-8 border-t border-border pt-8 md:grid-cols-2">
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
           {paths.map((path) => (
-            <Link key={path.href} href={path.href} className="group block">
-              <h3 className="text-lg font-semibold group-hover:underline">{path.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{path.text}</p>
+            <Link key={path.href} href={path.href} className={cn(surfaceClass, surfaceHoverClass, "group block")}>
+              <h3 className="text-lg font-semibold">{path.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-600">{path.text}</p>
+              <span className="mt-5 inline-flex items-center text-sm font-medium">
+                Megnézem
+                <span className="ml-2 transition-transform duration-200 group-hover:translate-x-1.5">→</span>
+              </span>
             </Link>
           ))}
         </div>

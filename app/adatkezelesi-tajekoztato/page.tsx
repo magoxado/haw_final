@@ -2,13 +2,14 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { FileDown } from "lucide-react"
 import { PageHeader } from "@/components/site"
+import { surfaceClass } from "@/components/surface"
 
 export default function PrivacyPolicyPage() {
   return (
     <div className="container mx-auto px-4 py-16 md:py-20">
-      <PageHeader eyebrow="Jogi" title="Adatkezelési tájékoztató" />
+      <PageHeader title="Adatkezelési tájékoztató" />
 
-      <div className="max-w-2xl border-t border-border pt-8">
+      <div className={`${surfaceClass} max-w-2xl`}>
         <p className="text-lg leading-relaxed">
           Adatkezelési tájékoztató az alábbi gombra kattintva, PDF formátumban tölthető le.
         </p>

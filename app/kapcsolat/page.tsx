@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Phone, Mail, Facebook } from "lucide-react"
 import ContactForm from "@/components/contact-form"
+import { surfaceClass } from "@/components/surface"
 
 const channels = [
   { label: "Telefon", value: "+36 20 397 4141", href: "tel:+36203974141", icon: Phone },
@@ -29,13 +30,13 @@ export default function ContactPage() {
         Írj üzenetet, vagy hívd fel a számot egy rövid, kötelezettségmentes beszélgetéshez.
       </p>
 
-      <div className="mt-10 grid items-start gap-10 border-t border-border pt-10 lg:grid-cols-2">
-        <aside>
+      <div className="mt-10 grid items-start gap-4 lg:grid-cols-2">
+        <aside className={surfaceClass}>
           <p className="text-lg font-semibold">Horváth Ágnes</p>
           <p className="mt-2 text-sm text-zinc-600">Business coach és szervezetfejlesztő</p>
 
           <p className="mt-8 text-xs uppercase tracking-wide text-zinc-500">Elérhetőség</p>
-          <div className="mt-3 divide-y divide-border border-y border-border">
+          <div className="mt-3 divide-y divide-zinc-100">
             {channels.map((channel) => (
               <a
                 key={channel.label}
@@ -63,7 +64,7 @@ export default function ContactPage() {
           </div>
         </aside>
 
-        <div className="border-t border-border pt-8 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+        <div className="rounded-3xl bg-[#F4F4F5] p-6 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] md:p-8">
           <ContactForm />
         </div>
       </div>
