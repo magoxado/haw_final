@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { BookOpen, Eye, Footprints, Heart, Lock, Music, Palette, Sparkles, Sprout, UserRound } from "lucide-react"
 import { CtaBand, PageHeader, Photo, SectionTitle } from "@/components/site"
 import { surfaceClass, surfaceHoverClass } from "@/components/surface"
 import { cn } from "@/lib/utils"
@@ -19,28 +20,55 @@ const benefits = [
 ]
 
 const process = [
-  "A terápiás folyamat során szabadon alkothatsz, megnyilvánulhatsz, mozoghatsz. Nem foglak sem befolyásolni, sem irányítani. Önmagad lehetsz.",
-  "Ítélkezés nélkül foglak visszatükrözni, így jobban el tudod magad fogadni. A különböző élményeidet átértékelheted, és elfogadhatod olyannak, amilyenek.",
-  "A megélt tapasztalataid alapján fejlődsz. Nyitottan látod őket, és be tudod illeszteni az énképedbe.",
-  "A terápia középpontjában nem a problémáid állnak, hanem te.",
-  "Szimbólumokon és metaforákon keresztül kommunikálhatsz, ahelyett hogy mindent szavakba kellene öntenünk. Így hozzáférhetsz olyan emlékekhez is, amelyek beszéddel nehezen jönnek elő.",
-  "Feltétel nélküli elfogadással dolgozom: úgy vagy jó, ahogy vagy. Szabadon vállalhatod önmagad, bármit előhozhatsz magadból. Biztonságot nyújtok, feléd fordulok.",
-  "Amit még tőlem kapsz, az az aktív, értő figyelem.",
-  "A terápián történteket és az elhangzottakat teljes diszkréció védi.",
+  {
+    icon: Sparkles,
+    text: "A terápiás folyamat során szabadon alkothatsz, megnyilvánulhatsz, mozoghatsz. Nem foglak sem befolyásolni, sem irányítani. Önmagad lehetsz.",
+  },
+  {
+    icon: Heart,
+    text: "Ítélkezés nélkül foglak visszatükrözni, így jobban el tudod magad fogadni. A különböző élményeidet átértékelheted, és elfogadhatod olyannak, amilyenek.",
+  },
+  {
+    icon: Sprout,
+    text: "A megélt tapasztalataid alapján fejlődsz. Nyitottan látod őket, és be tudod illeszteni az énképedbe.",
+  },
+  {
+    icon: UserRound,
+    text: "A terápia középpontjában nem a problémáid állnak, hanem te.",
+  },
+  {
+    icon: Palette,
+    text: "Szimbólumokon és metaforákon keresztül kommunikálhatsz, ahelyett hogy mindent szavakba kellene öntenünk. Így hozzáférhetsz olyan emlékekhez is, amelyek beszéddel nehezen jönnek elő.",
+  },
+  {
+    icon: Sparkles,
+    text: "Feltétel nélküli elfogadással dolgozom: úgy vagy jó, ahogy vagy. Szabadon vállalhatod önmagad, bármit előhozhatsz magadból. Biztonságot nyújtok, feléd fordulok.",
+  },
+  {
+    icon: Eye,
+    text: "Amit még tőlem kapsz, az az aktív, értő figyelem.",
+  },
+  {
+    icon: Lock,
+    text: "A terápián történteket és az elhangzottakat teljes diszkréció védi.",
+  },
 ]
 
 const tools = [
-  { title: "Képzőművészet", text: "Festék, rajzolás, tépés, ragasztás." },
+  { title: "Képzőművészet", icon: Palette, text: "Festék, rajzolás, tépés, ragasztás." },
   {
     title: "Zene",
+    icon: Music,
     text: "Hozott, vagy a csoport témájához választott zene. Lehet passzív zenehallgatás, vagy aktív közös zenélés.",
   },
   {
     title: "Mozgás",
+    icon: Footprints,
     text: "A mozgás és a képzelet találkozásán keresztül felszabadul a kreatív erőd, és újra tudod teremteni a belső harmóniádat. A test mindenre emlékszik. A mozgásterápia ezt a testi nyelvet állítja a gyógyulás szolgálatába, akkor is, ha az emlék előtte nehéz volt.",
   },
   {
     title: "Irodalom",
+    icon: BookOpen,
     text: "Mindannyian olvassuk magunkat és a világot avégett, hogy megragadhassuk, mik vagyunk és hol vagyunk. Azért olvasunk, hogy megértsünk valamit, vagy hogy elinduljunk a megértés útján.",
     source: "Alberto Manguel",
   },
@@ -91,24 +119,28 @@ export default function ArtTherapyPage() {
 
       <section className="mt-16">
         <SectionTitle>Mi történik?</SectionTitle>
-        <ol className={cn(surfaceClass, "divide-y divide-zinc-100")}>
+        <div className="grid gap-4 md:grid-cols-2">
           {process.map((item, index) => (
-            <li key={item} className="grid gap-3 py-5 md:grid-cols-[4rem_1fr]">
-              <span className="font-mono text-sm tabular-nums text-zinc-400">0{index + 1}</span>
-              <p className="leading-relaxed">{item}</p>
-            </li>
+            <article key={item.text} className={surfaceClass}>
+              <div className="flex items-center gap-3">
+                <item.icon className="h-5 w-5 text-[#1B3A4B]" />
+                <span className="font-mono text-sm tabular-nums text-zinc-400">0{index + 1}</span>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-700">{item.text}</p>
+            </article>
           ))}
-        </ol>
+        </div>
       </section>
 
       <section className="mt-16">
         <SectionTitle>Milyen eszközöket használok?</SectionTitle>
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {tools.map((tool) => (
             <article key={tool.title} className={cn(surfaceClass, surfaceHoverClass)}>
-              <h3 className="text-lg font-semibold">{tool.title}</h3>
+              <tool.icon className="h-6 w-6 text-[#1B3A4B]" />
+              <h3 className="mt-4 text-lg font-semibold">{tool.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-600">{tool.text}</p>
-              {"source" in tool && tool.source ? <p className="mt-3 text-sm font-medium">{tool.source}</p> : null}
+              {"source" in tool && tool.source ? <p className="mt-3 text-sm font-medium text-[#1B3A4B]">{tool.source}</p> : null}
             </article>
           ))}
         </div>

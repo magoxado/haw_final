@@ -25,22 +25,24 @@ export default function JobSearchPage() {
 
       <section>
         <SectionTitle>Ami mögöttem van</SectionTitle>
-        <ol className={cn(surfaceClass, "divide-y divide-zinc-100")}>
+        <div className="grid gap-4 md:grid-cols-2">
           {background.map((item, index) => (
-            <li key={item} className="flex gap-4 py-4 first:pt-0 last:pb-0">
-              <span className="w-8 shrink-0 font-mono text-sm tabular-nums text-zinc-400">0{index + 1}</span>
-              <p className="leading-relaxed">{item}</p>
-            </li>
+            <article key={item} className={surfaceClass}>
+              <span className="font-mono text-sm tabular-nums text-[#1B3A4B]">0{index + 1}</span>
+              <p className="mt-3 text-lg leading-relaxed">{item}</p>
+            </article>
           ))}
-        </ol>
+        </div>
       </section>
 
-      <section className="mt-8">
+      <section className="mt-10">
         <SectionTitle>Tanácsadás menete</SectionTitle>
-        <ol className={cn(surfaceClass, "divide-y divide-zinc-100")}>
+        <ol className="relative space-y-4 border-l border-[#1B3A4B]/30 pl-6">
           {steps.map((step, index) => (
-            <li key={step} className="grid gap-3 py-4 first:pt-0 last:pb-0 md:grid-cols-[4rem_1fr]">
-              <span className="font-mono text-sm tabular-nums text-zinc-400">0{index + 1}</span>
+            <li key={step} className={cn(surfaceClass, "relative")}>
+              <span className="absolute -left-[1.95rem] top-6 flex h-6 w-6 items-center justify-center rounded-full bg-[#1B3A4B] font-mono text-xs text-white">
+                {index + 1}
+              </span>
               <p className="leading-relaxed">{step}</p>
             </li>
           ))}

@@ -41,8 +41,8 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "rounded-full px-3 py-1.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-200",
-                isActive(pathname, item.href) && "bg-zinc-100",
+                "rounded-full px-3 py-1.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100 hover:text-[#1B3A4B]",
+                isActive(pathname, item.href) && "bg-[#1B3A4B] text-white hover:bg-[#152E3D] hover:text-white",
               )}
             >
               {item.name}
@@ -70,8 +70,8 @@ export default function Navbar() {
                     href={item.href}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "rounded-full px-4 py-2 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-200",
-                      isActive(pathname, item.href) && "bg-zinc-100",
+                      "rounded-full px-4 py-2 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-100 hover:text-[#1B3A4B]",
+                      isActive(pathname, item.href) && "bg-[#1B3A4B] text-white hover:bg-[#152E3D] hover:text-white",
                     )}
                   >
                     {item.name}

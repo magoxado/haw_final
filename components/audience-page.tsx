@@ -3,12 +3,16 @@
 import { useState } from "react"
 import Link from "next/link"
 import { BorderedList, ContactCard, Photo } from "@/components/site"
+import { surfaceClass } from "@/components/surface"
 import { cn } from "@/lib/utils"
 
 const companies = [
-  "Növekedési pályán, változás előtt álló cégeknek, vállalkozásoknak, vállalatoknak.",
-  "Cégvezetőknek, akik fejlődni, fejleszteni szeretnének.",
-  "Csapatoknak, akiknél probléma van és belülről nem látnak rá a kiváltó okokra.",
+  {
+    id: "cegek",
+    text: "Növekedési pályán, változás előtt álló cégeknek, vállalkozásoknak, vállalatoknak.",
+  },
+  { id: "vezetok", text: "Cégvezetőknek, akik fejlődni, fejleszteni szeretnének." },
+  { id: "csapatok", text: "Csapatoknak, akiknél probléma van és belülről nem látnak rá a kiváltó okokra." },
   "Tulajdonosoknak, akik növelni szeretnék a céget, de nem találják a kollégákhoz vezető utat.",
   "Vezetőknek, akik csapatot, közösséget szeretnének építeni, munkaerőt akarnak megtartani.",
 ]
@@ -21,19 +25,39 @@ const individuals = [
   "Egyensúlyt keresel a munka és a magánélet között.",
 ]
 
-const work = [
-  "Folyamatokat optimalizálok.",
-  "Informatikai megoldásokat javasolok.",
-  "Nyomtatványokat egységesítek, létrehozok újakat.",
-  "Önjáró folyamatokat állítok össze.",
-  "Megtervezem és segítek bevezetni a teljesítményértékelő rendszert.",
-  "Hatékonyabbá teszem a felvételi rendszert és a betanulást.",
-  "Segítek javítani a vállalati kommunikációt.",
-  "Kiépítem a belső vállalati kommunikáció útját.",
-  "Támogatom a változások sikeres végrehajtását.",
-  "Támogatom a vezetőket a hatékonyabb problémamegoldásban, vezetői folyamataikban.",
-  "Erősítem a vállalati kultúrát.",
-  "Segítek növelni a munkatársi elkötelezettséget. Támogatom a közösség kiépülését.",
+const workGroups = [
+  {
+    title: "Folyamatok",
+    items: [
+      "Folyamatokat optimalizálok.",
+      "Informatikai megoldásokat javasolok.",
+      "Nyomtatványokat egységesítek, létrehozok újakat.",
+      "Önjáró folyamatokat állítok össze.",
+    ],
+  },
+  {
+    title: "Emberek",
+    items: [
+      "Megtervezem és segítek bevezetni a teljesítményértékelő rendszert.",
+      "Hatékonyabbá teszem a felvételi rendszert és a betanulást.",
+      "Támogatom a vezetőket a hatékonyabb problémamegoldásban, vezetői folyamataikban.",
+    ],
+  },
+  {
+    title: "Kommunikáció",
+    items: [
+      "Segítek javítani a vállalati kommunikációt.",
+      "Kiépítem a belső vállalati kommunikáció útját.",
+      "Támogatom a változások sikeres végrehajtását.",
+    ],
+  },
+  {
+    title: "Kultúra",
+    items: [
+      "Erősítem a vállalati kultúrát.",
+      "Segítek növelni a munkatársi elkötelezettséget. Támogatom a közösség kiépülését.",
+    ],
+  },
 ]
 
 export default function AudiencePage({ initial }: { initial: "cegek" | "magan" }) {
@@ -79,7 +103,18 @@ export default function AudiencePage({ initial }: { initial: "cegek" | "magan" }
               <BorderedList items={companies} />
               <div>
                 <h2 className="mb-6 text-2xl font-semibold">Mit csinálok?</h2>
-                <BorderedList items={work} />
+                <div className="grid gap-4 md:grid-cols-2">
+                  {workGroups.map((group) => (
+                    <article key={group.title} className={surfaceClass}>
+                      <h3 className="text-lg font-semibold">{group.title}</h3>
+                      <ul className="mt-4 space-y-2 text-sm leading-relaxed text-zinc-700">
+                        {group.items.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </article>
+                  ))}
+                </div>
               </div>
               <div>
                 <h2 className="mb-6 text-2xl font-semibold">Mit várok el, ha velem dolgozol?</h2>

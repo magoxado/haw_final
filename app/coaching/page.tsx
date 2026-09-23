@@ -115,7 +115,12 @@ export default function CoachingPage() {
           meghatározza a kapcsolatomat ügyfeleimmel. Hiszem, hogy a kedvesség ereje segíti a bizalom és a nyitottság
           kialakítását és hozzájárul ahhoz, hogy ügyfeleim önmagukat adhassák.
         </p>
-        <Photo src="/images/onarckep.jpg" alt="Coaching támogatás" ratio="aspect-[5/4]" />
+        <Photo
+          src="/images/onarckep.jpg"
+          alt="Coaching támogatás"
+          ratio="aspect-[5/4]"
+          caption="Kedvesség, elfogadás, ítéletmentesség."
+        />
       </div>
 
       <section className="mt-16">

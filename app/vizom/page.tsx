@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react"
 import { Photo } from "@/components/site"
 import { surfaceClass } from "@/components/surface"
 
@@ -50,10 +51,16 @@ export default function VisionPage() {
         </div>
       </div>
 
-      <div className="mt-16 grid gap-4 md:grid-cols-3">
-        {pillars.map((pillar) => (
-          <article key={pillar.index} className={surfaceClass}>
-            <p className="font-mono text-sm uppercase tracking-wide text-zinc-400">
+      <div className="relative mt-12 grid gap-4 md:grid-cols-3">
+        <div className="pointer-events-none absolute left-[12%] right-[12%] top-8 hidden h-px bg-[#1B3A4B]/25 md:block" />
+        {pillars.map((pillar, index) => (
+          <article key={pillar.index} className={`${surfaceClass} relative`}>
+            {index < pillars.length - 1 ? (
+              <span className="absolute -right-3 top-6 z-10 hidden h-6 w-6 items-center justify-center rounded-full bg-[#1B3A4B] text-white md:flex">
+                <ArrowRight className="h-3.5 w-3.5" />
+              </span>
+            ) : null}
+            <p className="font-mono text-sm uppercase tracking-wide text-[#1B3A4B]">
               {pillar.index} / {pillar.label}
             </p>
             <h2 className="mt-4 text-2xl font-semibold">{pillar.title}</h2>

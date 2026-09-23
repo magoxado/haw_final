@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Compass, Network, Palette, Users } from "lucide-react"
 import { surfaceClass, surfaceHoverClass } from "@/components/surface"
 import { cn } from "@/lib/utils"
 
@@ -10,35 +10,42 @@ const services = [
     title: "Business coaching",
     text: "Vezetői hatékonyság, karrierút-tervezés és szakmai elakadások feloldása.",
     href: "/coaching",
+    icon: Compass,
   },
   {
     title: "Management tréning",
     text: "Vezetői készségek, delegálás és hatékony csapatirányítás.",
     href: "/kinek-tudok-segiteni?cel=cegek",
+    icon: Users,
   },
   {
     title: "Szervezetfejlesztés",
     text: "Folyamatok és együttműködés optimalizálása, a megfelelő ember a megfelelő helyen.",
     href: "/kinek-tudok-segiteni?cel=cegek",
+    icon: Network,
   },
   {
     title: "Művészetterápia",
     text: "Egyéni és csoportos folyamat, ahol az alkotás a belső munka eszköze.",
     href: "/muveszetterapia",
+    icon: Palette,
   },
 ]
 
 const audiences = [
   {
     title: "Vezetőknek",
+    href: "/kinek-tudok-segiteni?cel=cegek#vezetok",
     points: ["Kiégés megelőzése", "Karrierváltás és új utak", "Vezetői önbizalom"],
   },
   {
     title: "Cégeknek",
+    href: "/kinek-tudok-segiteni?cel=cegek#cegek",
     points: ["Megfelelő ember a megfelelő helyen", "Teljesítménynövelés", "Fluktuáció csökkentése"],
   },
   {
     title: "Csapatoknak",
+    href: "/kinek-tudok-segiteni?cel=cegek#csapatok",
     points: ["Kommunikáció", "Konfliktuskezelés", "Együttműködés"],
   },
 ]
@@ -141,6 +148,7 @@ export default function Home() {
               className="group flex h-full flex-col justify-between rounded-3xl border border-zinc-100 bg-white p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(27,58,75,0.12)]"
             >
               <div>
+                <service.icon className="mb-5 h-8 w-8 text-[#1B3A4B]" />
                 <h3 className="mb-3 text-xl font-semibold">{service.title}</h3>
                 <p className="mb-6 text-sm leading-relaxed text-zinc-600">{service.text}</p>
               </div>
@@ -162,14 +170,18 @@ export default function Home() {
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {audiences.map((group) => (
-            <article key={group.title} className={cn(surfaceClass, surfaceHoverClass, "md:p-6")}>
+            <Link key={group.title} href={group.href} className={cn(surfaceClass, surfaceHoverClass, "group block md:p-6")}>
               <h3 className="text-lg font-semibold">{group.title}</h3>
               <ul className="mt-4 space-y-2 text-sm text-zinc-600">
                 {group.points.map((point) => (
                   <li key={point}>{point}</li>
                 ))}
               </ul>
-            </article>
+              <span className="mt-5 inline-flex items-center text-sm font-medium text-[#1B3A4B]">
+                Részletek
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+              </span>
+            </Link>
           ))}
         </div>
       </section>
