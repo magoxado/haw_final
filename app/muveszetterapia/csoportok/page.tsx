@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Clock3, Palette, Users } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Csoportok – HAW",
+  title: "Csoportok - HAW",
   description: "A művészetterápiás csoportok szervezés alatt állnak. Hamarosan érkeznek a részletek.",
 }
 

@@ -102,7 +102,7 @@ export default function ContactForm() {
 
       <div className="text-sm text-muted-foreground">
         Az elküldéssel elfogadod az{" "}
-        <Link href="/adatkezelesi-tajekoztato" className="text-primary hover:underline">
+        <Link href="/adatkezelesi-tajekoztato" className="text-foreground underline underline-offset-4">
           Adatkezelési tájékoztatót
         </Link>
         .

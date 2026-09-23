@@ -8,11 +8,11 @@ export default function PrivacyPolicyPage() {
     <div className="container mx-auto px-4 py-16 md:py-20">
       <PageHeader eyebrow="Jogi" title="Adatkezelési tájékoztató" />
 
-      <div className="mx-auto max-w-2xl rounded-md border bg-card px-6 py-12 text-center md:px-12">
+      <div className="max-w-2xl border-t border-border pt-8">
         <p className="text-lg leading-relaxed">
           Adatkezelési tájékoztató az alábbi gombra kattintva, PDF formátumban tölthető le.
         </p>
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button asChild size="lg" className="gap-2">
             <a href="https://cdn.haw.hu/adatkezelesi-tajekoztato_haw.pdf" target="_blank" rel="noreferrer noopener">
               <FileDown className="h-4 w-4" />

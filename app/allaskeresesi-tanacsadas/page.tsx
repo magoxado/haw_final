@@ -10,7 +10,7 @@ const steps = [
   "Időpontot egyeztetünk, amikor online beszélünk.",
   "Időponttal együtt kapsz egy feladatot is, amelyet el kell készítened a beszélgetésünkre.",
   "Online beszélgetés során átvesszük a fő pontokat, elmondom a javaslataimat az önéletrajzoddal kapcsolatosan.",
-  "Ha az interjútechnikádat szeretnéd fejleszteni, próbainterjúzunk, én leszek a HR-es, Te pedig a jelentkező.",
+  "Ha az interjútechnikádat szeretnéd fejleszteni, próbainterjúzunk, én leszek a HR-es, te pedig a jelentkező.",
 ]
 
 export default function JobSearchPage() {
@@ -19,30 +19,28 @@ export default function JobSearchPage() {
       <PageHeader
         eyebrow="Karrier"
         title="Álláskeresési- és karrier-tanácsadás"
-        lead="Biztosan meglátom Benned az értéket és támogatlak, hogy képviselni is tudd."
+        lead="Biztosan meglátom benned az értéket, és támogatlak, hogy képviselni is tudd."
       />
 
-      <div className="grid gap-4 md:grid-cols-2">
-        {background.map((item, index) => (
-          <article key={item} className="rounded-md border bg-card p-6">
-            <p className="text-sm text-muted-foreground">Ami mögöttem van</p>
-            <p className="mt-3 leading-relaxed">
-              <span className="mr-2 text-muted-foreground">0{index + 1}</span>
-              {item}
-            </p>
-          </article>
-        ))}
-      </div>
+      <section>
+        <SectionTitle>Ami mögöttem van</SectionTitle>
+        <ol className="border-t border-border">
+          {background.map((item, index) => (
+            <li key={item} className="flex gap-4 border-b border-border py-4">
+              <span className="font-mono text-sm text-zinc-400">0{index + 1}</span>
+              <p className="leading-relaxed">{item}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
 
       <section className="mt-16">
         <SectionTitle>Tanácsadás menete</SectionTitle>
-        <ol className="relative space-y-4 border-l border-primary/30 pl-6 md:pl-8">
+        <ol className="border-t border-border">
           {steps.map((step, index) => (
-            <li key={step} className="relative rounded-md border bg-card p-5 md:p-6">
-              <span className="absolute -left-[1.85rem] top-6 text-sm text-muted-foreground md:-left-[2.35rem]">
-                {index + 1}
-              </span>
-              <p className="text-lg leading-relaxed">{step}</p>
+            <li key={step} className="grid gap-3 border-b border-border py-5 md:grid-cols-[4rem_1fr]">
+              <span className="font-mono text-sm text-zinc-400">0{index + 1}</span>
+              <p className="leading-relaxed">{step}</p>
             </li>
           ))}
         </ol>

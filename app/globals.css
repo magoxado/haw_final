@@ -4,64 +4,64 @@
 
 @layer base {
   :root {
-    --background: 240 5% 7%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 98.4%;
+    --foreground: 240 6% 10%;
 
-    --card: 240 6% 10%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 6% 10%;
 
-    --popover: 240 6% 10%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 6% 10%;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 240 6% 7%;
+    --primary: 240 6% 10%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 4% 14%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 6% 10%;
 
-    --muted: 240 4% 14%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
 
-    --accent: 32 28% 18%;
-    --accent-foreground: 36 45% 78%;
+    --accent: 240 5% 96%;
+    --accent-foreground: 240 6% 10%;
 
-    --destructive: 0 62% 45%;
-    --destructive-foreground: 240 5% 96%;
+    --destructive: 0 72% 42%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 240 4% 16%;
-    --input: 240 4% 16%;
-    --ring: 240 5% 80%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 240 6% 10%;
 
-    --radius: 0.375rem;
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 240 5% 7%;
-    --foreground: 0 0% 100%;
+    --background: 240 4% 10%;
+    --foreground: 0 0% 93%;
 
-    --card: 240 6% 10%;
-    --card-foreground: 0 0% 100%;
+    --card: 240 4% 12%;
+    --card-foreground: 0 0% 93%;
 
-    --popover: 240 6% 10%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 240 4% 12%;
+    --popover-foreground: 0 0% 93%;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 240 6% 7%;
+    --primary: 0 0% 93%;
+    --primary-foreground: 240 4% 10%;
 
     --secondary: 240 4% 14%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 0 0% 93%;
 
     --muted: 240 4% 14%;
     --muted-foreground: 240 5% 65%;
 
-    --accent: 32 28% 18%;
-    --accent-foreground: 36 45% 78%;
+    --accent: 240 4% 16%;
+    --accent-foreground: 0 0% 93%;
 
     --destructive: 0 62% 45%;
-    --destructive-foreground: 240 5% 96%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 240 4% 16%;
-    --input: 240 4% 16%;
+    --border: 240 4% 19%;
+    --input: 240 4% 19%;
     --ring: 240 5% 80%;
   }
 }
@@ -72,7 +72,7 @@
   }
 
   html {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   body {
@@ -82,10 +82,10 @@
   h1,
   h2,
   h3 {
-    @apply tracking-tight text-white;
+    @apply tracking-tight text-foreground;
   }
 
   ::selection {
-    background: hsl(240 5% 90% / 0.16);
+    background: hsl(240 6% 10% / 0.12);
   }
 }

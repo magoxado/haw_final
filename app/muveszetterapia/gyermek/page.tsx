@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { CtaBand, PageHeader } from "@/components/site"
 
 export const metadata: Metadata = {
-  title: "Gyermek művészetterápia – HAW",
+  title: "Gyermek művészetterápia - HAW",
   description:
-    "Gyermek művészetterápia bemutató – kreatív kifejezés, biztonságos tér, egyéni megközelítés és önbizalom építés.",
+    "Gyermek művészetterápia bemutató: kreatív kifejezés, biztonságos tér, egyéni megközelítés és önbizalom építés.",
 }
 
 const features = [
@@ -31,26 +31,23 @@ export default function ChildArtTherapyPage() {
     <div className="container mx-auto px-4 py-16 md:py-20">
       <PageHeader eyebrow="Gyermekeknek" title="Gyermek művészetterápia" lead="Horváth Ágnes · gyermek művészetterapeuta" />
 
-      <section className="mx-auto max-w-3xl rounded-md border bg-secondary/70 p-6 md:p-10">
-        <p className="text-lg leading-relaxed text-foreground/85">
-          Üdvözlöm! Művészetterapeutaként különleges figyelmet fordítok a gyermekekkel való munkára. Hiszem, hogy a
-          művészet csodálatos híd lehet a gyermeki lélek megértéséhez és a gyógyuláshoz.
+      <section className="max-w-3xl">
+        <p className="text-lg leading-relaxed">
+          Örülök, hogy itt vagy. Művészetterapeutaként külön figyelmet fordítok a gyermekekkel való munkára. Hiszem, hogy
+          a művészet híd lehet a gyermeki lélek megértéséhez és a gyógyuláshoz.
         </p>
-        <p className="mt-4 text-lg leading-relaxed text-foreground/85">
-          Tapasztalatom szerint a gyerekek természetesen kreatívak, és a művészeten keresztül könnyebben fejezik ki
-          érzéseiket, gondolataikat, mint szavakkal.
+        <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+          A gyerekek természetesen kreatívak, és a művészeten keresztül könnyebben fejezik ki az érzéseiket és a
+          gondolataikat, mint szavakkal.
         </p>
       </section>
 
-      <section className="mt-10 grid gap-5 sm:grid-cols-2">
+      <section className="mt-12 grid gap-8 border-t border-border pt-8 sm:grid-cols-2">
         {features.map((feature, index) => (
-          <article
-            key={feature.title}
-            className="rounded-md border bg-card p-6"
-          >
-            <span className="text-sm text-muted-foreground">0{index + 1}</span>
-            <h2 className="mt-3 text-2xl font-medium">{feature.title}</h2>
-            <p className="mt-3 leading-relaxed text-muted-foreground">{feature.text}</p>
+          <article key={feature.title}>
+            <span className="font-mono text-sm text-zinc-400">0{index + 1}</span>
+            <h2 className="mt-3 text-lg font-semibold">{feature.title}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{feature.text}</p>
           </article>
         ))}
       </section>
@@ -62,7 +59,7 @@ export default function ChildArtTherapyPage() {
 
       <CtaBand
         title="Kezdjük el a közös munkát"
-        text="Ha úgy érzi, hogy gyermeke számára hasznos lehet a művészetterápia, vegye fel velem a kapcsolatot. Szívesen beszélgetünk arról, hogyan segíthetek."
+        text="Ha úgy érzed, hogy a gyermeked számára hasznos lehet a művészetterápia, írj, és beszéljük meg, hogyan segíthetek."
       />
     </div>
   )

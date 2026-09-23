@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { BorderedList, ContactCard } from "@/components/site"
+import { BorderedList, ContactCard, Photo } from "@/components/site"
 import { cn } from "@/lib/utils"
 
 const companies = [
@@ -33,7 +33,7 @@ const work = [
   "Támogatom a változások sikeres végrehajtását.",
   "Támogatom a vezetőket a hatékonyabb problémamegoldásban, vezetői folyamataikban.",
   "Erősítem a vállalati kultúrát.",
-  "Segítem növeli a munkatársi elkötelezettséget. Támogatom a közösség kiépülését.",
+  "Segítek növelni a munkatársi elkötelezettséget. Támogatom a közösség kiépülését.",
 ]
 
 export default function AudiencePage({ initial }: { initial: "cegek" | "magan" }) {
@@ -62,7 +62,7 @@ export default function AudiencePage({ initial }: { initial: "cegek" | "magan" }
             onClick={() => setTab(id)}
             className={cn(
               "rounded-md border px-3 py-2 text-sm",
-              tab === id ? "border-white bg-white text-black" : "border-border text-muted-foreground",
+              tab === id ? "border-foreground bg-foreground text-background" : "border-border bg-transparent text-muted-foreground",
             )}
           >
             {label}
@@ -70,7 +70,7 @@ export default function AudiencePage({ initial }: { initial: "cegek" | "magan" }
         ))}
       </div>
 
-      <div className="mt-8 grid items-start gap-6 lg:grid-cols-[1fr_280px]">
+      <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
         <div className="space-y-10">
           {tab === "cegek" ? (
             <>
@@ -109,7 +109,14 @@ export default function AudiencePage({ initial }: { initial: "cegek" | "magan" }
             </>
           )}
         </div>
-        <ContactCard />
+        <div className="flex h-full flex-col gap-6">
+          <Photo
+            src={tab === "cegek" ? "/images/logo.jpg" : "/images/celtudatos.jpg"}
+            alt={tab === "cegek" ? "Céges tanácsadás" : "Céltudatos"}
+            className="aspect-[4/5] w-full min-h-0"
+          />
+          <ContactCard />
+        </div>
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-import { ContactCard, CtaBand, PageHeader, SectionTitle } from "@/components/site"
+import { CtaBand, PageHeader, Photo, SectionTitle } from "@/components/site"
 
 const questions = [
   "Hogyan találjak új karrierutat?",
@@ -66,7 +66,7 @@ const reasons = [
 ]
 
 const lines = [
-  "Nem csak a munkád változik – te magad is fejlődsz.",
+  "Nem csak a munkád változik. Te magad is fejlődsz.",
   "A valódi siker akkor jön, amikor a karriered összhangban van az értékeiddel.",
   "Minden váltás lehetőség az újrakezdésre és növekedésre.",
 ]
@@ -86,35 +86,30 @@ export default function CoachingPage() {
           meghatározza a kapcsolatomat ügyfeleimmel. Hiszem, hogy a kedvesség ereje segíti a bizalom és a nyitottság
           kialakítását és hozzájárul ahhoz, hogy ügyfeleim önmagukat adhassák.
         </p>
-        <ContactCard />
+        <Photo src="/images/onarckep.jpg" alt="Coaching támogatás" className="aspect-[5/4] w-full min-h-0" />
       </div>
 
       <section className="mt-16">
-        <SectionTitle>Kérdések, amelyek felmerülhetnek Benned</SectionTitle>
-        <div className="flex flex-wrap gap-3">
-          {questions.map((question) => (
-            <span
-              key={question}
-              className="rounded-md border bg-card px-4 py-2 text-sm transition hover:border-foreground/40"
-            >
-              {question}
-            </span>
+        <SectionTitle>Kérdések, amelyek felmerülhetnek benned</SectionTitle>
+        <ol className="grid border-t border-border md:grid-cols-2">
+          {questions.map((question, index) => (
+            <li key={question} className="flex gap-4 border-b border-border py-4 md:odd:pr-8 md:even:pl-8">
+              <span className="font-mono text-sm text-zinc-400">{String(index + 1).padStart(2, "0")}</span>
+              <p>{question}</p>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
       <section className="mt-16">
         <SectionTitle>Kinek segítek?</SectionTitle>
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="grid gap-8 border-t border-border pt-8 lg:grid-cols-3">
           {audiences.map((group) => (
-            <article
-              key={group.title}
-              className="rounded-md border bg-card p-6"
-            >
-              <h3 className="text-2xl font-medium">{group.title}</h3>
-              <ul className="mt-4 space-y-3 text-muted-foreground">
+            <article key={group.title}>
+              <h3 className="text-lg font-semibold">{group.title}</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
                 {group.points.map((point) => (
-                  <li key={point} className="border-t border-border/80 pt-3 first:border-0 first:pt-0">
+                  <li key={point} className="border-t border-border pt-3">
                     {point}
                   </li>
                 ))}
@@ -126,12 +121,12 @@ export default function CoachingPage() {
 
       <section className="mt-16">
         <SectionTitle>Amit nyújtok</SectionTitle>
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-8 border-t border-border pt-8 md:grid-cols-2">
           {offers.map((offer, index) => (
-            <article key={offer.title} className="rounded-md bg-secondary/80 p-6">
-              <span className="text-sm text-muted-foreground">0{index + 1}</span>
-              <h3 className="mt-3 text-2xl font-medium">{offer.title}</h3>
-              <p className="mt-3 leading-relaxed text-muted-foreground">{offer.text}</p>
+            <article key={offer.title}>
+              <span className="font-mono text-sm text-zinc-400">0{index + 1}</span>
+              <h3 className="mt-3 text-lg font-semibold">{offer.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{offer.text}</p>
             </article>
           ))}
         </div>
@@ -139,10 +134,10 @@ export default function CoachingPage() {
 
       <section className="mt-16">
         <SectionTitle>Miért velem?</SectionTitle>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 border-t border-border pt-8 sm:grid-cols-2 lg:grid-cols-4">
           {reasons.map((reason) => (
-            <article key={reason.title} className="rounded-md border bg-card p-5">
-              <h3 className="font-display text-xl">{reason.title}</h3>
+            <article key={reason.title}>
+              <h3 className="text-lg font-semibold">{reason.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{reason.text}</p>
             </article>
           ))}

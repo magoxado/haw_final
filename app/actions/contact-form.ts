@@ -54,19 +54,19 @@ export async function submitContactForm(formData: FormData) {
       console.error("Error sending email with Resend:", error)
       return {
         success: false,
-        message: "Hiba történt az üzenet küldése közben. Kérjük, próbálja újra később.",
+        message: "Hiba történt az üzenet küldése közben. Próbáld újra később.",
       }
     }
 
     return {
       success: true,
-      message: "Köszönjük! Üzenetét sikeresen elküldtük.",
+      message: "Köszönöm! Az üzenetedet megkaptam.",
     }
   } catch (error) {
     console.error("Error sending email:", error)
     return {
       success: false,
-      message: "Hiba történt az üzenet küldése közben. Kérjük, próbálja újra később.",
+        message: "Hiba történt az üzenet küldése közben. Próbáld újra később.",
     }
   }
 }
