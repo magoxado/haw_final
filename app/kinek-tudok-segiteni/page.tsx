@@ -2,8 +2,9 @@ import Image from "next/image"
 
 export default function WhoCanIHelpPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8 text-center">Kinek tudok segíteni?</h1>
+    <div className="container mx-auto px-4 py-16 md:py-20">
+      <p className="eyebrow mb-3 text-center">Együttműködés</p>
+      <h1 className="mb-12 text-center text-4xl font-medium md:text-6xl">Kinek tudok segíteni?</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
         <div>
@@ -34,7 +35,7 @@ export default function WhoCanIHelpPage() {
         <div className="flex justify-center">
           <div className="relative w-full max-w-md h-80">
             <Image
-              src="images/celtudatos.jpg"
+              src="/images/celtudatos.jpg"
               alt="Céltudatos"
               fill
               className="object-cover rounded-lg"

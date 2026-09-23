@@ -4,13 +4,14 @@ import { Button } from "@/components/ui/button"
 
 export default function ArtTherapyPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8 text-center">Művészetterápia</h1>
+    <div className="container mx-auto px-4 py-16 md:py-20">
+      <p className="eyebrow mb-3 text-center">Terápia</p>
+      <h1 className="mb-12 text-center text-4xl font-medium md:text-6xl">Művészetterápia</h1>
 
       <div className="flex justify-center mb-8">
         <div className="relative w-64 h-80">
           <Image
-            src="images/muveszet.jpg"
+            src="/images/muveszet.jpg"
             alt="Művészetterápia"
             fill
             className="object-cover rounded-lg"

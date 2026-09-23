@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button"
 
 export default function JobSearchPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8 text-center">Álláskeresési- és karrier-tanácsadás</h1>
+    <div className="container mx-auto px-4 py-16 md:py-20">
+      <p className="eyebrow mb-3 text-center">Karrier</p>
+      <h1 className="mb-12 text-center text-4xl font-medium md:text-6xl">Álláskeresési- és karrier-tanácsadás</h1>
 
       
 

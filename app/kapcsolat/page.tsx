@@ -5,8 +5,9 @@ import ContactForm from "@/components/contact-form"
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8 text-center">Kapcsolat</h1>
+    <div className="container mx-auto px-4 py-16 md:py-20">
+      <p className="eyebrow mb-3 text-center">Írjon</p>
+      <h1 className="mb-12 text-center text-4xl font-medium md:text-6xl">Kapcsolat</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
         <Card>

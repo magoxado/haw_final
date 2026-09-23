@@ -1,7 +1,7 @@
 import type React from "react"
 import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Fraunces, Outfit } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
@@ -9,7 +9,15 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
-const inter = Inter({ subsets: ["latin", "latin-ext"] })
+const outfit = Outfit({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-sans",
+})
+
+const fraunces = Fraunces({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-display",
+})
 
 export const metadata: Metadata = {
   title: "HAW - Horváth Ágnes",
@@ -26,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu">
-      <body className={inter.className}>
+      <body className={`${outfit.variable} ${fraunces.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <div className="flex flex-col min-h-screen">
             <Navbar />

@@ -2,8 +2,9 @@ import Image from "next/image"
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8 text-center">Rólam</h1>
+    <div className="container mx-auto px-4 py-16 md:py-20">
+      <p className="eyebrow mb-3 text-center">Bemutatkozás</p>
+      <h1 className="mb-12 text-center text-4xl font-medium md:text-6xl">Rólam</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
         <div>
@@ -31,7 +32,7 @@ export default function AboutPage() {
         <div className="flex justify-center">
           <div className="relative w-64 h-80 rounded-lg overflow-hidden">
                           <Image
-                            src="images/selfie.jpg"
+                            src="/images/selfie.jpg"
                             alt="Horváth Ágnes"
                             fill
                             className="object-cover"

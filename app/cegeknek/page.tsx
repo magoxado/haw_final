@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button"
 
 export default function CompaniesPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8 text-center">Cégeknek</h1>
+    <div className="container mx-auto px-4 py-16 md:py-20">
+      <p className="eyebrow mb-3 text-center">Vállalatoknak</p>
+      <h1 className="mb-12 text-center text-4xl font-medium md:text-6xl">Cégeknek</h1>
 
-      <div className="bg-[#f8f4e4] p-8 rounded-lg mb-12">
+      <div className="bg-secondary/80 p-8 rounded-lg mb-12">
         <div className="mb-8">
           <h2 className="text-3xl font-bold mb-4">Fejlődés. Növekedés. Változás. Újítás.</h2>
           <p className="text-lg">
@@ -46,7 +47,7 @@ export default function CompaniesPage() {
           <div className="flex justify-center">
             <div className="relative w-full max-w-md h-80">
               <Image
-                src="images/logo.jpg"
+                src="/images/logo.jpg"
                 alt="Céges tanácsadás"
                 fill
                 className="object-cover rounded-lg"

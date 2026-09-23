@@ -2,8 +2,9 @@ import Image from "next/image"
 
 export default function VisionPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8 text-center">Vízióm</h1>
+    <div className="container mx-auto px-4 py-16 md:py-20">
+      <p className="eyebrow mb-3 text-center">Irány</p>
+      <h1 className="mb-12 text-center text-4xl font-medium md:text-6xl">Vízióm</h1>
 
       <blockquote className="text-center italic text-xl mb-12">
         <p>"Amit érdemes csinálni, azt érdemes jól csinálni."</p>
@@ -19,7 +20,7 @@ export default function VisionPage() {
         <div className="flex justify-center mb-6">
           <div className="relative w-full max-w-2xl h-64">
               <Image
-                src="images/szikla.jpg"
+                src="/images/szikla.jpg"
                 alt="Szikla"
                 fill
                 className="object-cover"

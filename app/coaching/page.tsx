@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button"
 
 export default function CoachingPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8 text-center">Coaching</h1>
+    <div className="container mx-auto px-4 py-16 md:py-20">
+      <p className="eyebrow mb-3 text-center">Karrier</p>
+      <h1 className="mb-12 text-center text-4xl font-medium md:text-6xl">Coaching</h1>
 
-      <div className="bg-[#f8f4e4] p-8 rounded-lg mb-12">
+      <div className="bg-secondary/80 p-8 rounded-lg mb-12">
         <div className="mb-8">
           <h2 className="text-3xl font-bold mb-4">Coachként segítek neked átlépni az akadályokat és megtalálni a számodra ideális utat a szakmai életedben.</h2>
           <p className="text-lg">
@@ -62,7 +63,7 @@ export default function CoachingPage() {
           <div className="flex justify-center">
             <div className="relative w-full max-w-md h-80">
               <Image
-                src="images/onarckep.jpg" 
+                src="/images/onarckep.jpg" 
                 alt="Coaching támogatás"
                 fill
                 className="object-cover rounded-lg"
@@ -173,7 +174,7 @@ export default function CoachingPage() {
         </ul>
       </div>
 
-      <div className="text-center bg-[#f8f4e4] p-8 rounded-lg mb-12">
+      <div className="text-center bg-secondary/80 p-8 rounded-lg mb-12">
         <p className="text-lg mb-4 italic">"Nem csak a munkád változik – te magad is fejlődsz"</p>
         <p className="text-lg mb-4 italic">"A valódi siker akkor jön, amikor a karriered összhangban van az értékeiddel"</p>
         <p className="text-lg italic">"Minden váltás lehetőség az újrakezdésre és növekedésre"</p>
