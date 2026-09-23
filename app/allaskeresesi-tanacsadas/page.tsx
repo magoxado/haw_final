@@ -37,13 +37,16 @@ export default function JobSearchPage() {
 
       <section className="mt-10">
         <SectionTitle>Tanácsadás menete</SectionTitle>
-        <ol className="relative space-y-4 border-l border-[#1B3A4B]/30 pl-6">
+        <ol className="relative">
+          <span className="absolute bottom-6 left-[13px] top-6 w-px bg-[#1B3A4B]/35" aria-hidden />
           {steps.map((step, index) => (
-            <li key={step} className={cn(surfaceClass, "relative")}>
-              <span className="absolute -left-[1.95rem] top-6 flex h-6 w-6 items-center justify-center rounded-full bg-[#1B3A4B] font-mono text-xs text-white">
+            <li key={step} className="relative flex items-start gap-4 pb-4 last:pb-0">
+              <span className="relative z-10 mt-6 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#1B3A4B] font-mono text-xs text-white ring-4 ring-[#E4E7EE]">
                 {index + 1}
               </span>
-              <p className="leading-relaxed">{step}</p>
+              <div className={cn(surfaceClass, "min-w-0 flex-1 md:p-6")}>
+                <p className="leading-relaxed">{step}</p>
+              </div>
             </li>
           ))}
         </ol>
