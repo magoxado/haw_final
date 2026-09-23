@@ -52,10 +52,6 @@ export default function ContactPage() {
                 </span>
               </a>
             ))}
-            <div className="py-3 text-sm">
-              <span className="block text-zinc-500">Helyszín</span>
-              <span className="mt-0.5 block">Budapest és online</span>
-            </div>
           </div>
 
           <div className="mt-8">
