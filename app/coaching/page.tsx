@@ -1,4 +1,4 @@
-import { CtaBand, PageHeader, Photo, SectionTitle } from "@/components/site"
+import { ContactCard, CtaBand, PageHeader, SectionTitle } from "@/components/site"
 
 const questions = [
   "Hogyan találjak új karrierutat?",
@@ -86,7 +86,7 @@ export default function CoachingPage() {
           meghatározza a kapcsolatomat ügyfeleimmel. Hiszem, hogy a kedvesség ereje segíti a bizalom és a nyitottság
           kialakítását és hozzájárul ahhoz, hogy ügyfeleim önmagukat adhassák.
         </p>
-        <Photo src="/images/onarckep.jpg" alt="Coaching támogatás" className="aspect-[5/4] w-full" />
+        <ContactCard />
       </div>
 
       <section className="mt-16">

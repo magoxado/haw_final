@@ -6,7 +6,6 @@ const pages = [
   { name: "Rólam", href: "/rolam" },
   { name: "Vízióm", href: "/vizom" },
   { name: "Kinek tudok segíteni?", href: "/kinek-tudok-segiteni" },
-  { name: "Cégeknek", href: "/cegeknek" },
   { name: "Coaching", href: "/coaching" },
   { name: "Művészetterápia", href: "/muveszetterapia" },
   { name: "Kapcsolat", href: "/kapcsolat" },

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { CtaBand, PageHeader, Photo, SectionTitle } from "@/components/site"
+import { CtaBand, PageHeader, SectionTitle } from "@/components/site"
 
 const benefits = [
   "Segítségével a saját erőforrásokat aktivizálni tudjunk.",
@@ -69,13 +69,7 @@ export default function ArtTherapyPage() {
         lead="Miért művészetterápia? Van benne valami természetes, valami magától értetődő, mégis felszabadító és gondolkodásra késztető."
       />
 
-      <Photo
-        src="/images/muveszet.jpg"
-        alt="Művészetterápia"
-        caption="Szia! Örülök, hogy itt vagy!"
-        className="mx-auto aspect-[4/5] w-full max-w-sm"
-        priority
-      />
+      <p className="text-muted-foreground">Szia! Örülök, hogy itt vagy!</p>
 
       <section className="mt-16">
         <SectionTitle>Mire jó?</SectionTitle>

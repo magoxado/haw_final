@@ -22,7 +22,6 @@ const mainLinks = [
 ]
 
 const serviceLinks = [
-  { name: "Cégeknek", href: "/cegeknek" },
   { name: "Coaching", href: "/coaching" },
   { name: "Művészetterápia", href: "/muveszetterapia" },
   { name: "Álláskeresési tanácsadás", href: "/allaskeresesi-tanacsadas" },

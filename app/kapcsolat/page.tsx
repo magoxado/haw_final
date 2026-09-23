@@ -1,65 +1,69 @@
+import Link from "next/link"
 import { Phone, Mail, Facebook } from "lucide-react"
 import ContactForm from "@/components/contact-form"
-import { PageHeader } from "@/components/site"
 
 const channels = [
+  { label: "Telefon", value: "+36 20 397 4141", href: "tel:+36203974141", icon: Phone },
+  { label: "E-mail", value: "info@haw.hu", href: "mailto:info@haw.hu", icon: Mail },
   {
-    icon: Phone,
-    label: "Telefonszám",
-    value: "+36 20 397 4141",
-    href: "tel:+36203974141",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: "info@haw.hu",
-    href: "mailto:info@haw.hu",
-  },
-  {
-    icon: Facebook,
-    label: "Facebook",
+    label: "Közösségi média",
     value: "facebook.com/hawhorvathagnes",
     href: "https://www.facebook.com/hawhorvathagnes/",
+    icon: Facebook,
     external: true,
   },
 ]
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto px-4 py-16 md:py-20">
-      <PageHeader
-        eyebrow="Írjon"
-        title="Kapcsolat"
-        lead="Vegye fel velem a kapcsolatot, és beszéljük meg, hogyan tudok segíteni."
-      />
+    <div className="container mx-auto px-4 py-16 md:px-8">
+      <p className="text-sm text-muted-foreground">
+        <Link href="/" className="hover:text-white">
+          Főoldal
+        </Link>
+        <span className="px-2">/</span>
+        Kapcsolat
+      </p>
+      <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">Vegyük fel a kapcsolatot</h1>
+      <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
+        Írj üzenetet, vagy hívd fel a számot egy rövid, kötelezettségmentes beszélgetéshez.
+      </p>
 
-      <div className="grid items-start gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-        <aside className="border border-border p-6 md:p-8">
+      <div className="mt-10 grid items-start gap-6 lg:grid-cols-2">
+        <aside className="rounded-md border border-zinc-800 bg-zinc-900 p-6">
           <p className="text-lg font-semibold">Horváth Ágnes</p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Business coach, management tréner, szocio- és művészetterapeuta
-          </p>
-          <div className="mt-8 divide-y divide-border border-t border-border">
+          <p className="mt-2 text-sm text-muted-foreground">Business coach és szervezetfejlesztő</p>
+
+          <p className="mt-8 text-xs uppercase text-muted-foreground">Elérhetőség</p>
+          <div className="mt-3 space-y-3">
             {channels.map((channel) => (
               <a
                 key={channel.label}
                 href={channel.href}
                 target={channel.external ? "_blank" : undefined}
                 rel={channel.external ? "noopener noreferrer" : undefined}
-                className="flex items-center gap-3 py-4 text-sm hover:text-foreground"
+                className="flex items-center gap-3 rounded-md border border-transparent px-2 py-2 text-sm hover:border-zinc-800 hover:bg-zinc-950"
               >
                 <channel.icon className="h-4 w-4 text-muted-foreground" />
                 <span>
                   <span className="block text-muted-foreground">{channel.label}</span>
-                  <span className="mt-1 block">{channel.value}</span>
+                  <span className="mt-0.5 block text-white">{channel.value}</span>
                 </span>
               </a>
             ))}
+            <div className="px-2 py-2 text-sm">
+              <span className="block text-muted-foreground">Helyszín</span>
+              <span className="mt-0.5 block text-white">Budapest és online</span>
+            </div>
+          </div>
+
+          <div className="mt-8 border-t border-zinc-800 pt-6">
+            <p className="text-xs uppercase text-muted-foreground">Válaszidő</p>
+            <p className="mt-2 text-sm text-white">Munkanapokon 24 órán belül.</p>
           </div>
         </aside>
 
-        <div className="rounded-md border bg-card p-6 md:p-10">
-          <h2 className="mb-6 text-3xl font-medium">Üzenet</h2>
+        <div className="rounded-md border border-zinc-800 bg-zinc-900 p-6">
           <ContactForm />
         </div>
       </div>

@@ -43,7 +43,7 @@ export default function GroupsComingSoonPage() {
           <h1 className="text-3xl font-semibold tracking-tight md:text-5xl">A csoportjaim hamarosan érkeznek.</h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
             Jelenleg intenzíven dolgozom a csoportjaim szervezésén, hogy a lehető legjobb és leghatékonyabb élményt
-            nyújthassam Önnek. Kérem, látogasson vissza később a részletekért.
+            nyújthassak neked. Nézz vissza később a részletekért.
           </p>
         </div>
 

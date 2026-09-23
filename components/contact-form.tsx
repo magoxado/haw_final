@@ -25,14 +25,14 @@ function SubmitButton() {
   const { pending } = useFormStatus()
 
   return (
-    <Button type="submit" className="w-full" disabled={pending}>
+    <Button type="submit" disabled={pending}>
       {pending ? (
         <>
           <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
           Küldés...
         </>
       ) : (
-        "Üzenet küldése"
+        "Üzenet elküldése"
       )}
     </Button>
   )
@@ -71,15 +71,15 @@ export default function ContactForm() {
           <label htmlFor="name" className="text-sm font-medium">
             Név
           </label>
-          <Input id="name" name="name" placeholder="Az Ön neve" />
+          <Input id="name" name="name" placeholder="Minta János" />
           {formState.errors?.name && <p className="text-sm text-red-500">{formState.errors.name[0]}</p>}
         </div>
 
         <div className="space-y-2">
           <label htmlFor="email" className="text-sm font-medium">
-            Email
+            E-mail cím
           </label>
-          <Input id="email" name="email" type="email" placeholder="Az Ön email címe" />
+          <Input id="email" name="email" type="email" placeholder="janos@ceg.hu" />
           {formState.errors?.email && <p className="text-sm text-red-500">{formState.errors.email[0]}</p>}
         </div>
       </div>
@@ -88,7 +88,7 @@ export default function ContactForm() {
         <label htmlFor="subject" className="text-sm font-medium">
           Tárgy
         </label>
-        <Input id="subject" name="subject" placeholder="Az üzenet tárgya" />
+        <Input id="subject" name="subject" placeholder="Vezetői coaching érdeklődés" />
         {formState.errors?.subject && <p className="text-sm text-red-500">{formState.errors.subject[0]}</p>}
       </div>
 
@@ -96,12 +96,12 @@ export default function ContactForm() {
         <label htmlFor="message" className="text-sm font-medium">
           Üzenet
         </label>
-        <Textarea id="message" name="message" placeholder="Az Ön üzenete" rows={5} />
+        <Textarea id="message" name="message" placeholder="Miben segíthetek?" rows={5} />
         {formState.errors?.message && <p className="text-sm text-red-500">{formState.errors.message[0]}</p>}
       </div>
 
       <div className="text-sm text-muted-foreground">
-        A küldés gomb megnyomásával elfogadom az{" "}
+        Az elküldéssel elfogadod az{" "}
         <Link href="/adatkezelesi-tajekoztato" className="text-primary hover:underline">
           Adatkezelési tájékoztatót
         </Link>
