@@ -42,8 +42,8 @@ export default function CompaniesPage() {
           </p>
           <div className="mt-8 space-y-3">
             {audiences.map((item, index) => (
-              <div key={item} className="flex gap-4 rounded-2xl border bg-card px-4 py-4">
-                <span className="font-display text-xl text-primary">0{index + 1}</span>
+              <div key={item} className="flex gap-4 border-t border-border py-4">
+                <span className="text-sm text-muted-foreground">0{index + 1}</span>
                 <p>{item}</p>
               </div>
             ))}
@@ -58,7 +58,7 @@ export default function CompaniesPage() {
           {work.map((item) => (
             <article
               key={item}
-              className="rounded-[1.4rem] border bg-card p-5 leading-relaxed transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-md"
+              className="rounded-md border bg-card p-5 leading-relaxed"
             >
               {item}
             </article>
@@ -72,7 +72,7 @@ export default function CompaniesPage() {
           {expectations.map((item) => (
             <p
               key={item}
-              className="rounded-[1.6rem] bg-foreground px-6 py-10 text-center font-display text-3xl text-background"
+              className="border-t border-border py-6 text-lg font-semibold"
             >
               {item}
             </p>

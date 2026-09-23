@@ -83,7 +83,7 @@ export default function ArtTherapyPage() {
           {benefits.map((item) => (
             <article
               key={item}
-              className="flex flex-col rounded-[1.6rem] border bg-card p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="flex flex-col rounded-md border bg-card p-6"
             >
               <p className="flex-1 text-lg leading-relaxed">{item}</p>
               <p className="mt-5 text-sm text-primary">{refrain}</p>
@@ -96,8 +96,8 @@ export default function ArtTherapyPage() {
         <SectionTitle>Mit történik?</SectionTitle>
         <div className="space-y-4">
           {process.map((item, index) => (
-            <article key={index} className="grid gap-4 rounded-[1.6rem] border bg-card p-6 md:grid-cols-[4rem_1fr]">
-              <span className="font-display text-3xl text-primary/40">0{index + 1}</span>
+            <article key={index} className="grid gap-4 rounded-md border bg-card p-6 md:grid-cols-[4rem_1fr]">
+              <span className="text-sm text-muted-foreground">0{index + 1}</span>
               <div>
                 <p className="text-lg leading-relaxed">{item}</p>
                 {index !== 4 && index !== 7 ? <p className="mt-3 text-sm text-primary">{refrain}</p> : null}
@@ -111,7 +111,7 @@ export default function ArtTherapyPage() {
         <SectionTitle>Milyen eszközöket használok?</SectionTitle>
         <div className="grid gap-5 md:grid-cols-2">
           {tools.map((tool) => (
-            <article key={tool.title} className="rounded-[1.6rem] bg-secondary/80 p-6 md:p-8">
+            <article key={tool.title} className="rounded-md bg-secondary/80 p-6 md:p-8">
               <h3 className="text-2xl font-medium">{tool.title}</h3>
               <p className="mt-3 leading-relaxed text-foreground/80">{tool.text}</p>
             </article>
@@ -119,11 +119,11 @@ export default function ArtTherapyPage() {
         </div>
       </section>
 
-      <section className="mt-16 rounded-[2rem] border bg-card px-6 py-10 text-center md:px-12">
-        <p className="text-lg">A terápia történhet csoportos vagy egyéni formában.</p>
-        <blockquote className="mx-auto mt-6 max-w-2xl font-display text-2xl italic leading-snug md:text-3xl">
+      <section className="mt-16 border-t border-border pt-10">
+        <p>A terápia történhet csoportos vagy egyéni formában.</p>
+        <blockquote className="mt-6 max-w-2xl border-t border-border pt-6 text-lg leading-relaxed">
           „A művészetterápia a folyamatról szól, nem a termékről.”
-          <footer className="mt-3 text-sm not-italic tracking-[0.16em] text-muted-foreground">Sorbara</footer>
+          <footer className="mt-3 text-sm text-muted-foreground">Sorbara</footer>
         </blockquote>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <Button asChild size="lg">

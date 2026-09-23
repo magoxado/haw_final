@@ -8,7 +8,7 @@ export default function PrivacyPolicyPage() {
     <div className="container mx-auto px-4 py-16 md:py-20">
       <PageHeader eyebrow="Jogi" title="Adatkezelési tájékoztató" />
 
-      <div className="mx-auto max-w-2xl rounded-[2rem] border bg-card px-6 py-12 text-center shadow-sm md:px-12">
+      <div className="mx-auto max-w-2xl rounded-md border bg-card px-6 py-12 text-center md:px-12">
         <p className="text-lg leading-relaxed">
           Adatkezelési tájékoztató az alábbi gombra kattintva, PDF formátumban tölthető le.
         </p>

@@ -55,14 +55,14 @@ export default function ContactForm() {
   return (
     <form id="contact-form" action={handleSubmit} className="space-y-4">
       {formState.success && (
-        <Alert className="bg-green-50 border-green-200">
-          <AlertDescription className="text-green-800">{formState.message}</AlertDescription>
+        <Alert className="border-border bg-card">
+          <AlertDescription>{formState.message}</AlertDescription>
         </Alert>
       )}
 
       {formState.message && !formState.success && (
-        <Alert className="bg-red-50 border-red-200">
-          <AlertDescription className="text-red-800">{formState.message}</AlertDescription>
+        <Alert className="border-destructive/40 bg-card">
+          <AlertDescription>{formState.message}</AlertDescription>
         </Alert>
       )}
 

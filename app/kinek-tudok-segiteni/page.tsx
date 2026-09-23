@@ -20,9 +20,9 @@ export default function WhoCanIHelpPage() {
           {people.map((item, index) => (
             <article
               key={item}
-              className="flex gap-4 rounded-[1.4rem] border bg-card px-5 py-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
+              className="flex gap-4 rounded-md border bg-card px-5 py-5"
             >
-              <span className="font-display text-2xl text-primary">0{index + 1}</span>
+              <span className="text-sm text-muted-foreground">0{index + 1}</span>
               <p className="text-lg leading-relaxed">{item}</p>
             </article>
           ))}
@@ -32,7 +32,7 @@ export default function WhoCanIHelpPage() {
         </div>
       </div>
 
-      <section className="mt-16 grid gap-6 rounded-[2rem] bg-secondary/80 p-6 md:grid-cols-2 md:p-10">
+      <section className="mt-16 grid gap-8 border-t border-border pt-10 md:grid-cols-2">
         <p className="text-lg leading-relaxed">
           Véleményem szerint növekedni, hatékonyabb vállalati teljesítményt elérni, kizárólag vezetői, munkatársi közös
           munkával, letisztázott, hatékony folyamatokkal, tiszta, érhető kommunikációval lehet. A problémák, kellő

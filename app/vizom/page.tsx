@@ -38,21 +38,21 @@ export default function VisionPage() {
         lead="Nálam központban az ember, az idő és a pénz áll."
       />
 
-      <blockquote className="mx-auto max-w-3xl text-center">
-        <p className="font-display text-3xl italic leading-snug md:text-4xl">
+      <blockquote className="max-w-3xl border-t border-border pt-8">
+        <p className="text-lg leading-relaxed">
           „Amit érdemes csinálni, azt érdemes jól csinálni.”
         </p>
-        <footer className="mt-4 text-sm uppercase tracking-[0.18em] text-muted-foreground">Lord Chesterfield</footer>
+        <footer className="mt-4 text-sm text-muted-foreground">Lord Chesterfield</footer>
       </blockquote>
 
       <div className="mt-14 grid gap-4 md:grid-cols-3">
         {pillars.map((pillar, index) => (
           <article
             key={pillar.label}
-            className="rounded-[1.6rem] border bg-card p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            className="rounded-md border bg-card p-6"
           >
-            <span className="font-display text-4xl text-primary/35">0{index + 1}</span>
-            <h2 className="mt-4 text-3xl font-medium">{pillar.label}</h2>
+            <span className="text-sm text-muted-foreground">0{index + 1}</span>
+            <h2 className="mt-3 text-xl font-semibold tracking-tight">{pillar.label}</h2>
             <p className="mt-2 text-muted-foreground">{pillar.text}</p>
           </article>
         ))}
@@ -64,14 +64,10 @@ export default function VisionPage() {
         {quotes.map((quote) => (
           <blockquote
             key={quote.author + quote.text.slice(0, 24)}
-            className={
-              quote.dark
-                ? "flex h-full flex-col rounded-[1.6rem] bg-foreground p-8 text-background"
-                : "flex h-full flex-col rounded-[1.6rem] border bg-card p-8"
-            }
+            className="flex h-full flex-col border-t border-border py-6"
           >
-            <p className="flex-1 text-lg italic leading-relaxed">„{quote.text}”</p>
-            <footer className={quote.dark ? "mt-6 text-sm text-background/60" : "mt-6 text-sm text-muted-foreground"}>
+            <p className="flex-1 leading-relaxed">„{quote.text}”</p>
+            <footer className="mt-6 text-sm text-muted-foreground">
               {quote.author}
             </footer>
           </blockquote>

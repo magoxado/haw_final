@@ -45,19 +45,17 @@ export default function AboutPage() {
         {notes.map((note, index) => (
           <article
             key={note}
-            className="rounded-[1.6rem] border bg-card p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            className="rounded-md border bg-card p-6"
           >
-            <span className="font-display text-3xl text-primary/40">0{index + 1}</span>
+            <span className="text-sm text-muted-foreground">0{index + 1}</span>
             <p className="mt-3 leading-relaxed text-foreground/85">{note}</p>
           </article>
         ))}
       </div>
 
-      <section className="mt-16 rounded-[2rem] bg-foreground px-6 py-10 text-background md:px-12">
-        <SectionTitle>
-          <span className="text-background">Miért a művészetterápia?</span>
-        </SectionTitle>
-        <p className="max-w-3xl text-lg leading-relaxed text-background/80">
+      <section className="mt-16 border-t border-border pt-10">
+        <SectionTitle>Miért a művészetterápia?</SectionTitle>
+        <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground">
           Nagyon sokszor tapasztaltam, hogy minden megvan, minden egyben van, mégsem történik meg a változás. Ennek
           középpontjában is az ember áll. Művészetterápia eszközeivel át lehet segíteni a személyt, a csoportot a
           nehézségeken, az akadályokon, amelyek segítik a változást, a megújulást. Ezáltal egy komplex fejlesztési
@@ -68,7 +66,7 @@ export default function AboutPage() {
       <section className="mt-16">
         <SectionTitle>Rólam írták</SectionTitle>
         <div className="grid gap-5 md:grid-cols-2">
-          <blockquote className="rounded-[1.6rem] border bg-card p-8">
+          <blockquote className="rounded-md border bg-card p-8">
             <p className="text-lg leading-relaxed">
               „Nagyon megoldásfókuszú vagyok. A felmerülő problémákra, mint lehetőségekre tekintek. Nagyon felvillanyoz,
               ahogy elkezdődik a folyamat, kerülnek felszínre az újabb és újabb javaslatok, ötletek és amelyekből a
@@ -85,7 +83,7 @@ export default function AboutPage() {
               </a>
             </footer>
           </blockquote>
-          <blockquote className="rounded-[1.6rem] border bg-secondary/70 p-8">
+          <blockquote className="rounded-md border bg-secondary/70 p-8">
             <p className="text-lg leading-relaxed">
               „Azóta az önbizalmam is sokat erősödött. Jobban meg tudom fogalmazni, mit szeretnék. Nem vagyok görcsös,
               nem félek őszintének lenni az interjúkon, hiszen ahogy Ági mondta nekem: a HR-s is egy ember, a saját

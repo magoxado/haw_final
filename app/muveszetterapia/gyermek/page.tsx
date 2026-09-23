@@ -31,7 +31,7 @@ export default function ChildArtTherapyPage() {
     <div className="container mx-auto px-4 py-16 md:py-20">
       <PageHeader eyebrow="Gyermekeknek" title="Gyermek művészetterápia" lead="Horváth Ágnes · gyermek művészetterapeuta" />
 
-      <section className="mx-auto max-w-3xl rounded-[2rem] border bg-secondary/70 p-6 md:p-10">
+      <section className="mx-auto max-w-3xl rounded-md border bg-secondary/70 p-6 md:p-10">
         <p className="text-lg leading-relaxed text-foreground/85">
           Üdvözlöm! Művészetterapeutaként különleges figyelmet fordítok a gyermekekkel való munkára. Hiszem, hogy a
           művészet csodálatos híd lehet a gyermeki lélek megértéséhez és a gyógyuláshoz.
@@ -46,16 +46,16 @@ export default function ChildArtTherapyPage() {
         {features.map((feature, index) => (
           <article
             key={feature.title}
-            className="rounded-[1.6rem] border bg-card p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            className="rounded-md border bg-card p-6"
           >
-            <span className="font-display text-3xl text-primary/40">0{index + 1}</span>
+            <span className="text-sm text-muted-foreground">0{index + 1}</span>
             <h2 className="mt-3 text-2xl font-medium">{feature.title}</h2>
             <p className="mt-3 leading-relaxed text-muted-foreground">{feature.text}</p>
           </article>
         ))}
       </section>
 
-      <blockquote className="mt-10 rounded-[2rem] bg-foreground px-6 py-10 text-center font-display text-2xl italic leading-snug text-background md:text-3xl">
+      <blockquote className="mt-10 border-t border-border pt-8 text-lg leading-relaxed">
         „A művészetterápia olyan terápiás folyamat, ahol a művészetet eszközként használjuk lelki történéseink
         megértéséhez és nonverbális kommunikációhoz.”
       </blockquote>

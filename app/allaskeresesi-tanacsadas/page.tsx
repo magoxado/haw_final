@@ -24,10 +24,10 @@ export default function JobSearchPage() {
 
       <div className="grid gap-4 md:grid-cols-2">
         {background.map((item, index) => (
-          <article key={item} className="rounded-[1.6rem] border bg-card p-6 shadow-sm">
-            <p className="eyebrow">Ami mögöttem van</p>
-            <p className="mt-4 font-display text-2xl leading-snug">
-              <span className="mr-2 text-primary">0{index + 1}</span>
+          <article key={item} className="rounded-md border bg-card p-6">
+            <p className="text-sm text-muted-foreground">Ami mögöttem van</p>
+            <p className="mt-3 leading-relaxed">
+              <span className="mr-2 text-muted-foreground">0{index + 1}</span>
               {item}
             </p>
           </article>
@@ -38,8 +38,8 @@ export default function JobSearchPage() {
         <SectionTitle>Tanácsadás menete</SectionTitle>
         <ol className="relative space-y-4 border-l border-primary/30 pl-6 md:pl-8">
           {steps.map((step, index) => (
-            <li key={step} className="relative rounded-[1.4rem] border bg-card p-5 shadow-sm md:p-6">
-              <span className="absolute -left-[2.15rem] top-6 grid h-8 w-8 place-items-center rounded-full bg-primary text-sm font-medium text-primary-foreground md:-left-[2.65rem]">
+            <li key={step} className="relative rounded-md border bg-card p-5 md:p-6">
+              <span className="absolute -left-[1.85rem] top-6 text-sm text-muted-foreground md:-left-[2.35rem]">
                 {index + 1}
               </span>
               <p className="text-lg leading-relaxed">{step}</p>

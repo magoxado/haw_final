@@ -39,13 +39,11 @@ export default function Navbar() {
   const servicesActive = serviceLinks.some((item) => isActive(pathname, item.href))
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/70 bg-background/80 backdrop-blur-xl">
-      <div className="container flex h-[4.25rem] items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-foreground text-[11px] font-semibold tracking-[0.14em] text-background">
-            HAW
-          </span>
-          <span className="hidden sm:block font-display text-lg leading-none">Horváth Ágnes</span>
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
+      <div className="container flex h-14 items-center justify-between gap-4">
+        <Link href="/" className="flex items-center gap-3 shrink-0 text-sm font-semibold">
+          HAW
+          <span className="hidden font-normal text-muted-foreground sm:inline">Horváth Ágnes</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-7">
@@ -55,8 +53,7 @@ export default function Navbar() {
               href={item.href}
               className={cn(
                 "relative text-sm font-medium text-foreground/65 transition-colors hover:text-foreground",
-                isActive(pathname, item.href) &&
-                  "text-foreground after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-primary",
+                isActive(pathname, item.href) && "text-foreground",
               )}
             >
               {item.name}
@@ -67,21 +64,20 @@ export default function Navbar() {
             <DropdownMenuTrigger
               className={cn(
                 "relative inline-flex items-center gap-1 text-sm font-medium text-foreground/65 outline-none transition-colors hover:text-foreground",
-                servicesActive &&
-                  "text-foreground after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-[calc(100%-1rem)] after:rounded-full after:bg-primary",
+                servicesActive && "text-foreground",
               )}
             >
               Szolgáltatások
               <ChevronDown className="h-4 w-4" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-64 rounded-2xl p-2">
+            <DropdownMenuContent align="end" className="w-64 rounded-md p-1">
               {serviceLinks.map((item) => (
-                <DropdownMenuItem key={item.href} className="rounded-xl p-0">
+                <DropdownMenuItem key={item.href} className="rounded-sm p-0">
                   <Link
                     href={item.href}
                     className={cn(
-                      "w-full rounded-xl px-3 py-2.5",
-                      isActive(pathname, item.href) && "font-medium text-primary",
+                      "w-full px-3 py-2",
+                      isActive(pathname, item.href) && "text-foreground",
                     )}
                   >
                     {item.name}
@@ -99,7 +95,7 @@ export default function Navbar() {
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="outline" size="icon" className="rounded-full">
+              <Button variant="outline" size="icon">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Menü</span>
               </Button>

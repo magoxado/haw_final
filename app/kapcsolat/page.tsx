@@ -34,31 +34,31 @@ export default function ContactPage() {
       />
 
       <div className="grid items-start gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-        <aside className="rounded-[2rem] bg-foreground p-8 text-background md:p-10">
-          <p className="font-display text-3xl">Horváth Ágnes</p>
-          <p className="mt-3 text-background/70">Business coach, management tréner, szocio- és művészetterapeuta</p>
-          <div className="mt-8 space-y-3">
+        <aside className="border border-border p-6 md:p-8">
+          <p className="text-lg font-semibold">Horváth Ágnes</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Business coach, management tréner, szocio- és művészetterapeuta
+          </p>
+          <div className="mt-8 divide-y divide-border border-t border-border">
             {channels.map((channel) => (
               <a
                 key={channel.label}
                 href={channel.href}
                 target={channel.external ? "_blank" : undefined}
                 rel={channel.external ? "noopener noreferrer" : undefined}
-                className="flex items-center gap-4 rounded-2xl bg-background/10 px-4 py-4 transition hover:bg-background/15"
+                className="flex items-center gap-3 py-4 text-sm hover:text-foreground"
               >
-                <span className="grid h-11 w-11 place-items-center rounded-full bg-background text-foreground">
-                  <channel.icon className="h-5 w-5" />
-                </span>
+                <channel.icon className="h-4 w-4 text-muted-foreground" />
                 <span>
-                  <span className="block text-xs uppercase tracking-[0.16em] text-background/55">{channel.label}</span>
-                  <span className="mt-1 block text-lg">{channel.value}</span>
+                  <span className="block text-muted-foreground">{channel.label}</span>
+                  <span className="mt-1 block">{channel.value}</span>
                 </span>
               </a>
             ))}
           </div>
         </aside>
 
-        <div className="rounded-[2rem] border bg-card p-6 shadow-sm md:p-10">
+        <div className="rounded-md border bg-card p-6 md:p-10">
           <h2 className="mb-6 text-3xl font-medium">Üzenet</h2>
           <ContactForm />
         </div>
