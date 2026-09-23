@@ -22,7 +22,7 @@ const points = [
 
 export default function ManagementTrainingPage() {
   return (
-    <div className="container mx-auto px-4 py-16 md:py-20">
+    <div className="container mx-auto px-4 py-10 md:py-16">
       <PageHeader
         title="Management tréning"
         lead="Vezetői készségek, delegálás és hatékony csapatirányítás. Cégvezetőknek, akik fejlődni és fejleszteni szeretnének."

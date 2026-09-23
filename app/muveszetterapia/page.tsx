@@ -89,7 +89,7 @@ const paths = [
 
 export default function ArtTherapyPage() {
   return (
-    <div className="container mx-auto px-4 py-16 md:py-20">
+    <div className="container mx-auto px-4 py-10 md:py-16">
       <PageHeader
         title="Művészetterápia"
         lead="Van benne valami természetes és magától értetődő, mégis felszabadító, és gondolkodásra késztet."

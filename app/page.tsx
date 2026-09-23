@@ -86,12 +86,12 @@ export default function Home() {
   return (
     <div>
       <section>
-        <div className="container mx-auto grid items-center gap-10 px-4 py-12 lg:grid-cols-12 md:py-14">
+        <div className="container mx-auto grid items-center gap-8 px-4 py-8 lg:grid-cols-12 md:gap-10 md:py-14">
           <div className="space-y-6 lg:col-span-7">
             <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
               Üzleti coaching és szervezetfejlesztés
             </p>
-            <h1 className="max-w-xl text-4xl font-medium leading-tight md:text-5xl">
+            <h1 className="max-w-xl text-3xl font-medium leading-tight sm:text-4xl md:text-5xl">
               Emberközpontú vezetés.
               <br />
               <span className="text-zinc-500">Mérhető hatékonyság.</span>
@@ -101,17 +101,17 @@ export default function Home() {
               maximális teljesítmény elérésében.
             </p>
             <div className="flex flex-col gap-3 pt-2 sm:flex-row">
-              <Button asChild className="h-11 rounded-full bg-[#1B3A4B] px-6 hover:bg-[#152E3D]">
+              <Button asChild className="h-11 w-full rounded-full bg-[#1B3A4B] px-6 hover:bg-[#152E3D] sm:w-auto">
                 <Link href="/kapcsolat">Kapcsolatfelvétel</Link>
               </Button>
-              <Button asChild variant="outline" className="h-11 rounded-full bg-white px-6">
+              <Button asChild variant="outline" className="h-11 w-full rounded-full bg-white px-6 sm:w-auto">
                 <Link href="#szolgaltatasok">Szolgáltatások</Link>
               </Button>
             </div>
           </div>
 
           <div className="mx-auto w-full max-w-sm lg:col-span-5 lg:mx-0 lg:justify-self-end">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-3xl shadow-[0_12px_30px_-12px_rgba(27,58,75,0.35)]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-[0_12px_30px_-12px_rgba(27,58,75,0.35)] sm:aspect-[3/4]">
               <Image src="/images/selfie.jpg" alt="Horváth Ágnes" fill className="object-cover" priority />
             </div>
             <p className="mt-3 text-sm text-zinc-600">
@@ -162,7 +162,7 @@ export default function Home() {
       </section>
 
       <section className="container mx-auto px-4 pb-12">
-        <div className="mb-6 flex items-end justify-between gap-4">
+        <div className="mb-6 flex flex-col items-start gap-2 sm:flex-row sm:items-end sm:justify-between">
           <h2 className="text-2xl font-semibold">Kinek tudok segíteni?</h2>
           <Link href="/kinek-tudok-segiteni" className="text-sm font-medium text-[#1B3A4B] underline underline-offset-4">
             Megtekintés
@@ -223,7 +223,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <Button asChild className="rounded-full bg-[#1B3A4B] px-6 hover:bg-[#152E3D]">
+          <Button asChild className="w-full rounded-full bg-[#1B3A4B] px-6 hover:bg-[#152E3D] sm:w-auto">
             <Link href="/kapcsolat">Kapcsolatfelvétel</Link>
           </Button>
         </div>

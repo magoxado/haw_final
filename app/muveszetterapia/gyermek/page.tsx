@@ -30,7 +30,7 @@ const features = [
 
 export default function ChildArtTherapyPage() {
   return (
-    <div className="container mx-auto px-4 py-16 md:py-20">
+    <div className="container mx-auto px-4 py-10 md:py-16">
       <PageHeader title="Gyermek művészetterápia" lead="Horváth Ágnes, gyermek művészetterapeuta" />
 
       <section className={cn(surfaceClass, "max-w-3xl")}>

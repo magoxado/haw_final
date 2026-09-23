@@ -30,7 +30,7 @@ const upcoming = [
 export default function GroupsComingSoonPage() {
   return (
     <div>
-      <div className="container mx-auto px-4 py-16 md:py-20">
+      <div className="container mx-auto px-4 py-10 md:py-16">
         <Link
           href="/muveszetterapia"
           className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"

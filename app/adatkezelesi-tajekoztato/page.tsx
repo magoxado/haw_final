@@ -6,7 +6,7 @@ import { surfaceClass } from "@/components/surface"
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="container mx-auto px-4 py-16 md:py-20">
+    <div className="container mx-auto px-4 py-10 md:py-16">
       <PageHeader title="Adatkezelési tájékoztató" />
 
       <div className={`${surfaceClass} max-w-2xl`}>

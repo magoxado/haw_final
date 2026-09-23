@@ -64,13 +64,13 @@ export default function AudiencePage({ initial }: { initial: "cegek" | "magan" }
   const [tab, setTab] = useState(initial)
 
   return (
-    <div className="container mx-auto px-4 py-16 md:px-8">
+    <div className="container mx-auto px-4 py-10 md:px-8 md:py-16">
       <h1 className="text-3xl font-semibold tracking-tight md:text-5xl">Kinek tudok segíteni?</h1>
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
         Ugyanaz a munka két oldalról: cégeknek a működés és a csapat, magánszemélyeknek a karrier és a kiégés.
       </p>
 
-      <div className="mt-8 flex gap-2">
+      <div className="mt-8 flex flex-wrap gap-2">
         {(
           [
             ["cegek", "Cégeknek"],

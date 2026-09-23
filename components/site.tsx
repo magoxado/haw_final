@@ -20,7 +20,7 @@ export function PageHeader({
 }) {
   return (
     <header className="mb-12 max-w-3xl">
-      <h1 className="text-3xl font-semibold tracking-tight md:text-5xl">{title}</h1>
+      <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">{title}</h1>
       {lead ? <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">{lead}</p> : null}
     </header>
   )
@@ -72,12 +72,12 @@ export function Photo({
   if (contain) {
     return (
       <figure className={surfaceClass}>
-        <div className={cn("relative aspect-square w-full", className)}>
+        <div className={cn("relative aspect-square w-full overflow-hidden dark:rounded-2xl dark:bg-white", className)}>
           <Image
             src={src}
             alt={alt}
             fill
-            className="object-contain mix-blend-multiply"
+            className="object-contain mix-blend-multiply dark:scale-90"
             priority={priority}
             sizes="280px"
           />
@@ -124,8 +124,8 @@ export function DetailPage({
   children: ReactNode
 }) {
   return (
-    <div className="container mx-auto px-4 py-16 md:px-8">
-      <h1 className="text-3xl font-semibold tracking-tight md:text-5xl">{title}</h1>
+    <div className="container mx-auto px-4 py-10 md:px-8 md:py-16">
+      <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">{title}</h1>
       <div className="mt-10 grid items-start gap-10 lg:grid-cols-[minmax(240px,0.8fr)_1.2fr]">
         <div className="lg:sticky lg:top-24">
           <Photo src="/images/selfie.jpg" alt="Horváth Ágnes" priority />
@@ -168,8 +168,8 @@ export function ContactCard({ mark }: { mark?: string }) {
           rel="noopener noreferrer"
           className="mb-5 inline-block"
         >
-          <div className="relative h-16 w-16">
-            <Image src={mark} alt="HAW" fill className="object-contain mix-blend-multiply" sizes="64px" />
+          <div className="relative h-16 w-16 overflow-hidden dark:rounded-xl dark:bg-white">
+            <Image src={mark} alt="HAW" fill className="object-contain mix-blend-multiply dark:scale-90" sizes="64px" />
           </div>
           <p className="mt-2 text-sm font-medium text-[#1B3A4B] underline underline-offset-4">HAW the way</p>
         </a>

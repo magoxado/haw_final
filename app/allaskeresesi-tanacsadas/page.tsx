@@ -17,7 +17,7 @@ const steps = [
 
 export default function JobSearchPage() {
   return (
-    <div className="container mx-auto px-4 py-16 md:py-20">
+    <div className="container mx-auto px-4 py-10 md:py-16">
       <PageHeader
         title="Álláskeresési- és karrier-tanácsadás"
         lead="Biztosan meglátom benned az értéket, és támogatlak, hogy képviselni is tudd."
@@ -37,14 +37,18 @@ export default function JobSearchPage() {
 
       <section className="mt-10">
         <SectionTitle>Tanácsadás menete</SectionTitle>
-        <ol className="relative">
-          <span className="absolute bottom-6 left-[13px] top-6 w-px bg-[#1B3A4B]/35" aria-hidden />
+        <ol className="space-y-4">
           {steps.map((step, index) => (
-            <li key={step} className="relative flex items-start gap-4 pb-4 last:pb-0">
-              <span className="relative z-10 mt-6 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#1B3A4B] font-mono text-xs text-white ring-4 ring-[#E4E7EE]">
-                {index + 1}
-              </span>
-              <div className={cn(surfaceClass, "min-w-0 flex-1 md:p-6")}>
+            <li key={step} className="grid grid-cols-[2rem_minmax(0,1fr)] items-stretch gap-3 sm:gap-4">
+              <div className="relative flex justify-center">
+                {index < steps.length - 1 ? (
+                  <span className="absolute left-1/2 top-4 h-[calc(100%+1rem)] w-px -translate-x-1/2 bg-[#1B3A4B]/40" aria-hidden />
+                ) : null}
+                <span className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1B3A4B] font-mono text-xs text-white ring-4 ring-[hsl(var(--background))] dark:bg-[#3E6D86]">
+                  {index + 1}
+                </span>
+              </div>
+              <div className={cn(surfaceClass, "min-w-0 md:p-6")}>
                 <p className="leading-relaxed">{step}</p>
               </div>
             </li>

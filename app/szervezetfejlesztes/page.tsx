@@ -22,7 +22,7 @@ const points = [
 
 export default function OrganizationDevelopmentPage() {
   return (
-    <div className="container mx-auto px-4 py-16 md:py-20">
+    <div className="container mx-auto px-4 py-10 md:py-16">
       <PageHeader
         title="Szervezetfejlesztés"
         lead="Folyamatok és együttműködés optimalizálása. Húsz éves tapasztalattal támogatom a vállalatokat, hogy a fejlődés útjára lépjenek."

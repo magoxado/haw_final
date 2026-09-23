@@ -103,7 +103,7 @@ const lines = [
 
 export default function CoachingPage() {
   return (
-    <div className="container mx-auto px-4 py-16 md:py-20">
+    <div className="container mx-auto px-4 py-10 md:py-16">
       <PageHeader
         title="Coaching"
         lead="Coachként segítek neked átlépni az akadályokat és megtalálni a számodra ideális utat a szakmai életedben."

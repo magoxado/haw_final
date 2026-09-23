@@ -32,11 +32,11 @@ export default function Footer() {
             <h3 className="text-sm font-semibold">Kapcsolat</h3>
             <div className="mt-4 space-y-3 text-sm">
               <a href="tel:+36203974141" className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
-                <Phone className="h-4 w-4" />
+                <Phone className="h-4 w-4 shrink-0" />
                 +36 20 397 4141
               </a>
               <a href="mailto:info@haw.hu" className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
-                <Mail className="h-4 w-4" />
+                <Mail className="h-4 w-4 shrink-0" />
                 info@haw.hu
               </a>
               <a
@@ -45,8 +45,8 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
               >
-                <Facebook className="h-4 w-4" />
-                facebook.com/hawhorvathagnes
+                <Facebook className="h-4 w-4 shrink-0" />
+                <span className="min-w-0 break-all">facebook.com/hawhorvathagnes</span>
               </a>
             </div>
           </div>
