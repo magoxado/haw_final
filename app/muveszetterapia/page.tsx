@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { BookOpen, Eye, Footprints, Heart, Lock, Music, Palette, Sparkles, Sprout, UserRound } from "lucide-react"
-import { CtaBand, PageHeader, Photo, SectionTitle } from "@/components/site"
+import { CtaBand, Photo, SectionTitle } from "@/components/site"
 import { surfaceClass, surfaceHoverClass } from "@/components/surface"
 import { cn } from "@/lib/utils"
 
@@ -90,21 +90,24 @@ const paths = [
 export default function ArtTherapyPage() {
   return (
     <div className="container mx-auto px-4 py-10 md:py-16">
-      <PageHeader
-        title="Művészetterápia"
-        lead="Van benne valami természetes és magától értetődő, mégis felszabadító, és gondolkodásra késztet."
-      />
+      <div className="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_220px] md:gap-12">
+        <header>
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">Művészetterápia</h1>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
+            Van benne valami természetes és magától értetődő, mégis felszabadító, és gondolkodásra késztet.
+          </p>
+        </header>
+        <Photo
+          src="/images/muveszet.jpg"
+          alt="Művészetterápia"
+          caption="Szia! Örülök, hogy itt vagy!"
+          className="mx-auto w-full max-w-[220px]"
+          ratio="aspect-[4/5]"
+          priority
+        />
+      </div>
 
-      <Photo
-        src="/images/muveszet.jpg"
-        alt="Művészetterápia"
-        caption="Szia! Örülök, hogy itt vagy!"
-        className="mx-auto max-w-sm"
-        ratio="aspect-[4/5]"
-        priority
-      />
-
-      <section className="mt-16">
+      <section className="mt-12">
         <SectionTitle>Mire jó?</SectionTitle>
         <div className="grid gap-4 md:grid-cols-3">
           {benefits.map((item, index) => (
@@ -149,11 +152,11 @@ export default function ArtTherapyPage() {
       <section className="mt-16">
         <SectionTitle>Csoport vagy egyéni folyamat</SectionTitle>
         <p className="max-w-2xl text-muted-foreground">A terápia történhet csoportos vagy egyéni formában.</p>
-        <blockquote className={cn(surfaceClass, "mt-8 max-w-2xl text-lg leading-relaxed")}>
-          „A művészetterápia a folyamatról szól, nem a termékről.”
-          <footer className="mt-3 text-sm text-zinc-500">Sorbara</footer>
-        </blockquote>
-        <div className="mt-4 grid gap-4 md:grid-cols-2">
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <blockquote className={cn(surfaceClass, "text-lg leading-relaxed md:col-span-2")}>
+            „A művészetterápia a folyamatról szól, nem a termékről.”
+            <footer className="mt-3 text-sm text-zinc-500">Sorbara</footer>
+          </blockquote>
           {paths.map((path) => (
             <Link key={path.href} href={path.href} className={cn(surfaceClass, surfaceHoverClass, "group block")}>
               <h3 className="text-lg font-semibold">{path.title}</h3>

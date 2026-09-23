@@ -35,7 +35,7 @@ export default function Navbar() {
       <div className="container flex h-16 items-center justify-between gap-3 px-4">
         <Link href="/" className="flex items-center gap-3 shrink-0 text-sm font-semibold">
           HAW
-          <span className="hidden font-normal text-muted-foreground sm:inline">Horváth Ágnes</span>
+          <span className="hidden font-normal text-muted-foreground sm:inline xl:hidden 2xl:inline">Horváth Ágnes</span>
         </Link>
 
         <nav className="hidden items-center gap-1 xl:flex">
